@@ -1,5 +1,5 @@
  # Kodi Media Center language file
-# Addon Name: Fen
+# Addon Name: Ezra
 # Addon id: plugin.video.ezra
 # Addon Provider: 
 # Translator English: 
@@ -71,8 +71,8 @@ msgid "[B]Add to Cloud[/B]"
 msgstr ""
 
 msgctxt "#32017"
-msgid "Auto Start FEN when Kodi Starts"
-msgstr "FEN Automatisch Starten Als Kodi Opstart"
+msgid "Auto Start Ezra when Kodi Starts"
+msgstr "Ezra Automatisch Starten Als Kodi Opstart"
 
 msgctxt "#32018"
 msgid "Set"
@@ -107,8 +107,8 @@ msgid "Ignore Articles When Sorting Lists"
 msgstr ""
 
 msgctxt "#32026"
-msgid "Open Fen Extras When Selecting..."
-msgstr "Open Fen Extras Bij Het Selecteren Van..."
+msgid "Open Ezra Extras When Selecting..."
+msgstr "Open Ezra Extras Bij Het Selecteren Van..."
 
 msgctxt "#32027"
 msgid "Off"
@@ -147,7 +147,7 @@ msgid "Watched Status Provider"
 msgstr ""
 
 msgctxt "#32036"
-msgid "Fen"
+msgid "Ezra"
 msgstr ""
 
 msgctxt "#32037"
@@ -171,7 +171,7 @@ msgid "Time Remaining"
 msgstr ""
 
 msgctxt "#32042"
-msgid "Set Watched in Kodi Library when Watched in Fen"
+msgid "Set Watched in Kodi Library when Watched in Ezra"
 msgstr ""
 
 msgctxt "#32043"
@@ -467,7 +467,7 @@ msgid "External Scrapers"
 msgstr ""
 
 msgctxt "#32119"
-msgid "External Scrapers (Powered by Fenomscrapers)"
+msgid "External Scrapers (Powered by Ezscrapers)"
 msgstr ""
 
 msgctxt "#32120"
@@ -519,8 +519,8 @@ msgid "Press Context Menu for Playback Options..."
 msgstr ""
 
 msgctxt "#32137"
-msgid "Fenomscrapers Default Providers"
-msgstr "Fenomscrapers Standaard Providers"
+msgid "Ezscrapers Default Providers"
+msgstr "Ezscrapers Standaard Providers"
 
 msgctxt "#32138"
 msgid "Results Color Highlights"
@@ -1183,7 +1183,7 @@ msgid "Authorize Debrid Services"
 msgstr ""
 
 msgctxt "#32518"
-msgid "Tips for Fen Use"
+msgid "Tips for Ezra Use"
 msgstr ""
 
 msgctxt "#32519"
@@ -1195,7 +1195,7 @@ msgid "4K Results Color"
 msgstr ""
 
 msgctxt "#32522"
-msgid "Fenomscrapers"
+msgid "Ezscrapers"
 msgstr ""
 
 msgctxt "#32523"
@@ -1811,7 +1811,7 @@ msgid "Filter Title"
 msgstr ""
 
 msgctxt "#32680"
-msgid "[I]Please visit Fenom Scrapers to change settings[/I]"
+msgid "[I]Please visit Ez Scrapers to change settings[/I]"
 msgstr ""
 
 msgctxt "#32681"
@@ -2006,7 +2006,7 @@ msgid "Saving Torrent to the %s Cloud"
 msgstr ""
 
 msgctxt "#32733"
-msgid "Fen Cloud Transfer"
+msgid "Ezra Cloud Transfer"
 msgstr ""
 
 msgctxt "#32734"
@@ -2922,7 +2922,7 @@ msgid "Please go to [B]https://trakt.tv/activate[/B] and enter the code"
 msgstr ""
 
 msgctxt "#32967"
-msgid "Trakt & Fen Watched Status"
+msgid "Trakt & Ezra Watched Status"
 msgstr ""
 
 msgctxt "#32968"
@@ -3078,11 +3078,11 @@ msgid "[B]Reuse Langauage Invoker[/B] is currently set to %s.\n\nDo you wish to 
 msgstr ""
 
 msgctxt "#33019"
-msgid "Changing this setting can create problems within Fen. Continue?"
+msgid "Changing this setting can create problems within Ezra. Continue?"
 msgstr ""
 
 msgctxt "#33020"
-msgid "Fen will reload your profile to refresh the addon.xml"
+msgid "Ezra will reload your profile to refresh the addon.xml"
 msgstr ""
 
 msgctxt "#33021"
@@ -3114,7 +3114,7 @@ msgid "Open My Accounts  [I](Enter Account Details Here)[/I]"
 msgstr ""
 
 msgctxt "#33028"
-msgid "(Re)Sync Fen Settings with My Accounts"
+msgid "(Re)Sync Ezra Settings with My Accounts"
 msgstr ""
 
 msgctxt "#33029"
@@ -3210,45 +3210,45 @@ msgid "Set Max. Percent Starting Volume (0-100)"
 msgstr ""
 
 msgctxt "#40001"
-msgid "[B]FEN: Refresh Widgets[/B]"
+msgid "[B]Ezra: Refresh Widgets[/B]"
 msgstr ""
 
 msgctxt "#40002"
-msgid "[B]FEN: Browse...[/B]"
+msgid "[B]Ezra: Browse...[/B]"
 msgstr ""
 
 msgctxt "#40003"
-msgid "[B]FEN: Mark Watched[/B]"
+msgid "[B]Ezra: Mark Watched[/B]"
 msgstr ""
 
 msgctxt "#40004"
-msgid "[B]FEN: Mark Unwatched[/B]"
+msgid "[B]Ezra: Mark Unwatched[/B]"
 msgstr ""
 
 msgctxt "#40005"
-msgid "[B]FEN: Trakt Lists Manager[/B]"
+msgid "[B]Ezra: Trakt Lists Manager[/B]"
 msgstr ""
 
 msgctxt "#40006"
-msgid "[B]FEN: Extras...[/B]"
+msgid "[B]Ezra: Extras...[/B]"
 msgstr ""
 
 msgctxt "#40007"
-msgid "[B]FEN: Options...[/B]"
+msgid "[B]Ezra: Options...[/B]"
 msgstr ""
 
 msgctxt "#40008"
-msgid "[B]FEN: Favorites Manager[/B]"
+msgid "[B]Ezra: Favorites Manager[/B]"
 msgstr ""
 
 msgctxt "#40009"
-msgid "[B]FEN: Clear Progress[/B]"
+msgid "[B]Ezra: Clear Progress[/B]"
 msgstr ""
 
 msgctxt "#40010"
-msgid "[B]FEN: Play Random[/B]"
+msgid "[B]Ezra: Play Random[/B]"
 msgstr ""
 
 msgctxt "#40011"
-msgid "[B]FEN: Browse Season...[/B]"
+msgid "[B]Ezra: Browse Season...[/B]"
 msgstr ""
