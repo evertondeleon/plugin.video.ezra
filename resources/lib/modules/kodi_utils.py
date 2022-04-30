@@ -165,7 +165,7 @@ def widget_refresh():
 def container_refresh():
 	return execute_builtin('Container.Refresh')
 
-def ok_dialog(heading='Fen', text='', highlight='royalblue', ok_label=local_string(32839), top_space=False):
+def ok_dialog(heading='Ezra', text='', highlight='royalblue', ok_label=local_string(32839), top_space=False):
 	from windows import open_window
 	if isinstance(heading, int): heading = local_string(heading)
 	if isinstance(text, int): text = local_string(text)
@@ -174,7 +174,7 @@ def ok_dialog(heading='Fen', text='', highlight='royalblue', ok_label=local_stri
 	kwargs = {'heading': heading, 'text': text, 'highlight': highlight, 'ok_label': ok_label}
 	return open_window(('windows.select_ok', 'OK'), 'ok.xml', **kwargs)
 
-def confirm_dialog(heading='Fen', text='', highlight='royalblue', ok_label=local_string(32839), cancel_label=local_string(32840), top_space=False, default_control=11):
+def confirm_dialog(heading='Ezra', text='', highlight='royalblue', ok_label=local_string(32839), cancel_label=local_string(32840), top_space=False, default_control=11):
 	from windows import open_window
 	if isinstance(heading, int): heading = local_string(heading)
 	if isinstance(text, int): text = local_string(text)
@@ -198,7 +198,7 @@ def show_text(heading, text=None, file=None, font_size='small', kodi_log=False):
 	heading = heading.replace('[B]', '').replace('[/B]', '')
 	if file:
 		with open(file, encoding='utf-8') as r: text = r.readlines()
-	if kodi_log and confirm_dialog(heading='Fen', text=local_string(32855), ok_label=local_string(32824), cancel_label=local_string(32828), top_space=True):
+	if kodi_log and confirm_dialog(heading='Ezra', text=local_string(32855), ok_label=local_string(32824), cancel_label=local_string(32828), top_space=True):
 		text = [i for i in text if any(x in i.lower() for x in ('exception', 'error'))]
 	text = ''.join(text)
 	return open_window(('windows.textviewer', 'TextViewer'), 'textviewer.xml', heading=heading, text=text, font_size=font_size)

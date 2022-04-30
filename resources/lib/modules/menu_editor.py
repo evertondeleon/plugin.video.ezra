@@ -40,7 +40,7 @@ class MenuEditor:
 		listing.append((ls(32723) % list_name, self.check_update_list))
 		if not external_list_item: listing.append((ls(32724) % menu_name_translated_display, self.reload_menu_item))
 		list_items = [{'line1': i[0]} for i in listing]
-		kwargs = {'items': json.dumps(list_items), 'heading': 'Fen', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+		kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 		function = kodi_utils.select_dialog([i[1] for i in listing], **kwargs)
 		if function == None: return
 		self.params = {'active_list': active_list, 'list_name': list_name, 'menu_name': menu_name, 'menu_name_translated': menu_name_translated, 'position': position}
@@ -50,7 +50,7 @@ class MenuEditor:
 	def edit_menu_shortcut_folder(self):
 		listing = [(ls(32712), 'move'), (ls(32713), 'remove'), ('%s %s' % (ls(32671), ls(32129)), 'clear_all')]
 		list_items = [{'line1': i[0]} for i in listing]
-		kwargs = {'items': json.dumps(list_items), 'heading': 'Fen', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+		kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 		self.action = kodi_utils.select_dialog([i[1] for i in listing], **kwargs)
 		if self.action == None: return
 		return self.shortcut_folder_contents_adjust()
@@ -172,7 +172,7 @@ class MenuEditor:
 		list_items.insert(position, self._add_external_info_to_item(self.menu_item, menu_name))
 		self._db_execute('set', choice_name, list_items, refresh=False)
 
-	def _menu_select(self, choice_items, menu_name, heading='Fen', multi_line='false', position_list=False):
+	def _menu_select(self, choice_items, menu_name, heading='Ezra', multi_line='false', position_list=False):
 		def _builder():
 			for item in choice_items:
 				item_get = item.get

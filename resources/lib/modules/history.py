@@ -70,7 +70,7 @@ def remove_from_search_history(params):
 def clear_search_history():
 	try:
 		list_items = [{'line1': item[0], 'icon': icon} for item in clear_history_list]
-		kwargs = {'items': json.dumps(list_items), 'heading': 'Fen', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+		kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 		setting = kodi_utils.select_dialog([item[1] for item in clear_history_list], **kwargs)
 		if setting == None: return
 		main_cache.set(setting, '', expiration=timedelta(days=365))
