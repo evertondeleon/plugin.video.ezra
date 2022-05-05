@@ -4,7 +4,7 @@ import json
 from threading import Thread
 from urllib.parse import unquote
 import metadata
-from fenomscrapers import sources
+from ezscrapers import sources
 from windows import open_window, create_window
 from scrapers import external, folders
 from modules import debrid, resolver, kodi_utils, settings

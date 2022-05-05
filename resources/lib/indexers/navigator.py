@@ -218,11 +218,11 @@ class Navigator:
 
 	def settings(self):
 		settings_str = ls(32247)
-		fen_str, fenom_scr_str, myaccounts_str = ls(32036), ls(32522), ls(33025)
+		fen_str, ez_scr_str, myaccounts_str = ls(32036), ls(32522), ls(33025)
 		n_ins, lst_ins = _in_str % (settings_str.upper(), '%s'), (_in_str % (settings_str, '%s')).replace('[B]', '').replace(': [/B]', ' ')
 		self.AD({'mode': 'open_settings', 'query': '0.0', 'list_name': lst_ins % fen_str}, n_ins % fen_str, 'settings.png', False)
-		self.AD({'mode': 'external_settings', 'ext_addon': 'script.module.ezscrapers', 'list_name': lst_ins % fenom_scr_str},
-																				n_ins % fenom_scr_str, 'settings.png', False)
+		self.AD({'mode': 'external_settings', 'ext_addon': 'script.module.ezscrapers', 'list_name': lst_ins % ez_scr_str},
+																				n_ins % ez_scr_str, 'settings.png', False)
 		self.AD({'mode': 'external_settings', 'ext_addon': 'script.module.myaccounts', 'list_name': lst_ins % myaccounts_str},
 																				n_ins % myaccounts_str, 'settings.png', False)
 		self._end_directory()
