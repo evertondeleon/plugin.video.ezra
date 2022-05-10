@@ -10,7 +10,7 @@ from modules.zfile import ZipFile
 # from modules.kodi_utils import logger
 
 base_url = 'https://rest.opensubtitles.org/search'
-user_agent = 'Fen v1.0'
+user_agent = 'Ezra v1.0'
 requests = make_requests()
 
 class OpenSubtitlesAPI:

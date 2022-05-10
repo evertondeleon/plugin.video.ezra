@@ -15,7 +15,7 @@
                 <animation effect="fade" start="100" end="20" time="1000" tween="sine">WindowOpen</animation>
             </control>
         </control>
-        <!-- Fen Logo and Tips-->
+        <!-- Ezra Logo and Tips-->
         <control type="group">
             <animation effect="fade" start="0" end="100" delay="400" time="500">WindowOpen</animation>
             <left>5</left>

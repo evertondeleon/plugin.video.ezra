@@ -45,7 +45,7 @@ class source:
 			self.sources = list(_process())
 		except Exception as e:
 			from modules.kodi_utils import logger
-			logger('FEN furk scraper Exception', e)
+			logger('EZRA furk scraper Exception', e)
 		internal_results(self.scrape_provider, self.sources)
 		return self.sources
 

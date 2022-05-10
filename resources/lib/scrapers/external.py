@@ -41,7 +41,7 @@ class source:
 		self.finish_early = get_setting('search.finish.early') == 'true'
 		self.int_total, self.ext_total = total_format % (self.int_dialog_highlight, '%s'), total_format % (self.ext_dialog_highlight, '%s')
 		self.timeout = 60 if self.disabled_ignored else int(get_setting('scrapers.timeout.1', '30'))
-		self.meta = json.loads(get_property('fen_playback_meta'))
+		self.meta = json.loads(get_property('ezra_playback_meta'))
 		self.background = self.meta.get('background', False)
 		self.internal_sources_total = self.internal_sources_4K = self.internal_sources_1080p = self.internal_sources_720p = self.internal_sources_sd = 0
 		self.sources_total = self.sources_4k = self.sources_1080p = self.sources_720p = self.sources_sd = 0

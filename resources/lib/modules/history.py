@@ -36,7 +36,7 @@ def get_search_term(params):
 		url_params, string = {'mode': 'easynews.search_easynews'}, 'easynews_video_queries'
 	if search_type == 'tmdb_collections':
 		url_params, string = {'mode': 'build_movie_list', 'action': 'tmdb_movies_search_collections'}, 'tmdb_collections_queries'
-	query = params.get('query', None) or kodi_utils.dialog.input('Fen')
+	query = params.get('query', None) or kodi_utils.dialog.input('Ezra')
 	if not query: return
 	query = unquote(query)
 	add_to_search_history(query, string)

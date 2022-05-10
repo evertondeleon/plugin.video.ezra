@@ -2,4 +2,4 @@
 import sys
 from xbmc import executebuiltin
 
-executebuiltin("ActivateWindow(Videos,%s)" % sys.listitem.getProperty("fen_browse_seas_params"))
+executebuiltin("ActivateWindow(Videos,%s)" % sys.listitem.getProperty("ezra_browse_seas_params"))

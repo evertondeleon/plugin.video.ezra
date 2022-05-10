@@ -2,4 +2,4 @@
 import sys
 from xbmc import executebuiltin
 
-executebuiltin("RunPlugin(%s)" % sys.listitem.getProperty('fen_random_params'))
+executebuiltin("RunPlugin(%s)" % sys.listitem.getProperty('ezra_random_params'))

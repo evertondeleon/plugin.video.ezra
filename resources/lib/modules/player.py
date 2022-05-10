@@ -17,7 +17,7 @@ ls = kodi_utils.local_string
 poster_empty = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/box_office.png')
 fanart_empty = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 
-class FenPlayer(kodi_utils.xbmc_player):
+class EzraPlayer(kodi_utils.xbmc_player):
 	def __init__ (self):
 		kodi_utils.xbmc_player.__init__(self)
 		self.set_resume, self.set_watched = 5, 90
@@ -38,7 +38,7 @@ class FenPlayer(kodi_utils.xbmc_player):
 				playlist.add(url, listitem)
 				kodi_utils.close_all_dialog()
 				return self.play(playlist)
-			self.meta = json.loads(kodi_utils.get_property('fen_playback_meta'))
+			self.meta = json.loads(kodi_utils.get_property('ezra_playback_meta'))
 			self.meta_get = self.meta.get
 			self.tmdb_id, self.imdb_id, self.tvdb_id = self.meta_get('tmdb_id'), self.meta_get('imdb_id'), self.meta_get('tvdb_id')
 			self.media_type, self.title, self.year = self.meta_get('media_type'), self.meta_get('title'), self.meta_get('year')
@@ -47,7 +47,7 @@ class FenPlayer(kodi_utils.xbmc_player):
 			library_item = True if 'from_library' in self.meta else False
 			if 'random' in self.meta or 'random_continual' in self.meta: bookmark = 0
 			elif library_item: bookmark = self.bookmarkLibrary()
-			else: bookmark = self.bookmarkFen()
+			else: bookmark = self.bookmarkEzra()
 			if bookmark == 'cancel': return
 			self.meta.update({'url': url, 'bookmark': bookmark})
 			try:
@@ -89,7 +89,7 @@ class FenPlayer(kodi_utils.xbmc_player):
 			self.monitor()
 		except: return
 
-	def bookmarkFen(self):
+	def bookmarkEzra(self):
 		bookmark = 0
 		watched_indicators = settings.watched_indicators()
 		try: resume_point, curr_time, resume_id = indicators.detect_bookmark(indicators.get_bookmarks(watched_indicators, self.media_type), self.tmdb_id, self.season, self.episode)
@@ -162,8 +162,8 @@ class FenPlayer(kodi_utils.xbmc_player):
 									'tmdb_id': self.tmdb_id, 'title': self.title, 'year': self.year, 'tvdb_id': self.tvdb_id, 'refresh': 'false', 'from_playback': 'true'}
 				Thread(target=self.run_media_watched, args=(watched_function, watched_params)).start()
 			else:
-				kodi_utils.clear_property('fen_nextep_autoplays')
-				kodi_utils.clear_property('fen_random_episode_history')
+				kodi_utils.clear_property('ezra_nextep_autoplays')
+				kodi_utils.clear_property('ezra_random_episode_history')
 				if self.current_point >= self.set_resume:
 					indicators.set_bookmark(self.media_type, self.tmdb_id, self.curr_time, self.total_time, self.title, self.season, self.episode)
 		except: pass
@@ -314,7 +314,7 @@ class Subtitles(kodi_utils.xbmc_player):
 		kodi_utils.sleep(2500)
 		imdb_id = re.sub(r'[^0-9]', '', imdb_id)
 		subtitle_path = kodi_utils.translate_path('special://temp/')
-		sub_filename = 'FENSubs_%s_%s_%s' % (imdb_id, season, episode) if season else 'FENSubs_%s' % imdb_id
+		sub_filename = 'EZRASubs_%s_%s_%s' % (imdb_id, season, episode) if season else 'EZRASubs_%s' % imdb_id
 		search_filename = sub_filename + '_%s.srt' % self.language1
 		subtitle = _video_file_subs()
 		if subtitle: return

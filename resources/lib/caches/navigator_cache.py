@@ -10,7 +10,7 @@ SET_LIST = 'INSERT OR REPLACE INTO navigator VALUES (?, ?, ?)'
 DELETE_LIST = 'DELETE FROM navigator WHERE list_name=? and list_type=?'
 GET_FOLDERS = 'SELECT list_name, list_contents FROM navigator WHERE list_type = ?'
 GET_FOLDER_CONTENTS = 'SELECT list_contents FROM navigator WHERE list_name = ? AND list_type = ?'
-prop_dict = {'default': 'fen_%s_default', 'edited': 'fen_%s_edited', 'shortcut_folder': 'fen_%s_shortcut_folder'}
+prop_dict = {'default': 'ezra_%s_default', 'edited': 'ezra_%s_edited', 'shortcut_folder': 'ezra_%s_shortcut_folder'}
 
 class NavigatorCache:
 	def __init__(self):

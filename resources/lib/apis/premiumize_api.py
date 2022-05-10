@@ -15,7 +15,7 @@ session = make_session(base_url)
 class PremiumizeAPI:
 	def __init__(self):
 		self.client_id = '663882072'
-		self.user_agent = 'Fen for Kodi'
+		self.user_agent = 'Ezra for Kodi'
 		self.token = get_setting('pm.token')
 
 	def auth_loop(self):
@@ -42,7 +42,7 @@ class PremiumizeAPI:
 		data = {'response_type': 'device_code', 'client_id': self.client_id}
 		url = 'https://www.premiumize.me/token'
 		response = self._post(url, data)
-		progressDialog.create('Fen', '')
+		progressDialog.create('Ezra', '')
 		progressDialog.update(-1, line % (ls(32517), ls(32700) % response.get('verification_uri'), ls(32701) % response.get('user_code')))
 		self.device_code = response['device_code']
 		while self.token == '':
@@ -205,15 +205,15 @@ class PremiumizeAPI:
 
 	def user_cloud(self, folder_id=None):
 		if folder_id:
-			string = 'fen_pm_user_cloud_%s' % folder_id
+			string = 'ezra_pm_user_cloud_%s' % folder_id
 			url = 'folder/list?id=%s' % folder_id
 		else:
-			string = 'fen_pm_user_cloud_root'
+			string = 'ezra_pm_user_cloud_root'
 			url = 'folder/list'
 		return cache_object(self._get, string, url, False, 0.5)
 
 	def user_cloud_all(self):
-		string = 'fen_pm_user_cloud_all_files'
+		string = 'ezra_pm_user_cloud_all_files'
 		url = 'item/listall'
 		return cache_object(self._get, string, url, False, 0.5)
 
@@ -250,14 +250,14 @@ class PremiumizeAPI:
 		return response['status']
 
 	def get_item_details(self, item_id):
-		string = 'fen_pm_item_details_%s' % item_id
+		string = 'ezra_pm_item_details_%s' % item_id
 		url = 'item/details'
 		data = {'id': item_id}
 		args = [url, data]
 		return cache_object(self._post, string, args, False, 24)
 
 	def get_hosts(self):
-		string = 'fen_pm_valid_hosts'
+		string = 'ezra_pm_valid_hosts'
 		url = 'services/list'
 		hosts_dict = {'Premiumize.me': []}
 		hosts = []
@@ -307,7 +307,7 @@ class PremiumizeAPI:
 			dbcur = dbcon.cursor()
 			# USER CLOUD
 			try:
-				dbcur.execute("""SELECT id FROM maincache WHERE id LIKE ?""", ('fen_pm_user_cloud%',))
+				dbcur.execute("""SELECT id FROM maincache WHERE id LIKE ?""", ('ezra_pm_user_cloud%',))
 				try:
 					user_cloud_cache = dbcur.fetchall()
 					user_cloud_cache = [i[0] for i in user_cloud_cache]
@@ -322,15 +322,15 @@ class PremiumizeAPI:
 			except: user_cloud_success = False
 			# DOWNLOAD LINKS
 			try:
-				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('fen_pm_transfers_list',))
-				clear_property("fen_pm_transfers_list")
+				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('ezra_pm_transfers_list',))
+				clear_property("ezra_pm_transfers_list")
 				dbcon.commit()
 				download_links_success = True
 			except: download_links_success = False
 			# HOSTERS
 			try:
-				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('fen_pm_valid_hosts',))
-				clear_property('fen_pm_valid_hosts')
+				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('ezra_pm_valid_hosts',))
+				clear_property('ezra_pm_valid_hosts')
 				dbcon.commit()
 				dbcon.close()
 				hoster_links_success = True

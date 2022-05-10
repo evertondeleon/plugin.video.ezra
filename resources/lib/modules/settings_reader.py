@@ -8,7 +8,7 @@ def set_setting(setting_id, value):
 	addon().setSetting(setting_id, value)
 
 def get_setting(setting_id, fallback=None):
-	try: settings_dict = json.loads(get_property('fen_settings'))
+	try: settings_dict = json.loads(get_property('ezra_settings'))
 	except: settings_dict = make_settings_dict()
 	if settings_dict is None: settings_dict = get_setting_fallback(setting_id)
 	value = settings_dict.get(setting_id, '')
@@ -34,6 +34,6 @@ def make_settings_dict():
 			if setting_value is None: setting_value = ''
 			dict_item = {setting_id: setting_value}
 			settings_dict.update(dict_item)
-		set_property('fen_settings', json.dumps(settings_dict))
+		set_property('ezra_settings', json.dumps(settings_dict))
 	except: pass
 	return settings_dict

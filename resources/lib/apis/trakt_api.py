@@ -168,7 +168,7 @@ def trakt_collection_lists(media_type, param1, param2):
 	# param1 = the type of list to be returned (from 'new_page' param), param2 is currently not used
 	limit = 20
 	string_insert = 'movie' if media_type in ('movie', 'movies') else 'tvshow'
-	window_property_name = 'fen_trakt_collection_%s' % string_insert
+	window_property_name = 'ezra_trakt_collection_%s' % string_insert
 	try: data = json.loads(kodi_utils.get_property(window_property_name))
 	except: data = trakt_fetch_collection_watchlist('collection', media_type)
 	if param1 == 'recent':
@@ -313,7 +313,7 @@ def get_trakt_list_selection(list_choice=None, highlight=None):
 def make_new_trakt_list(params):
 	from urllib.parse import unquote
 	mode = params['mode']
-	list_title = kodi_utils.dialog.input('Fen')
+	list_title = kodi_utils.dialog.input('Ezra')
 	if not list_title: return
 	list_name = unquote(list_title)
 	data = {'name': list_name, 'privacy': 'private', 'allow_comments': False}

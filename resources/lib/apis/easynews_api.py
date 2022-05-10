@@ -43,7 +43,7 @@ class EasyNewsAPI:
 
 	def search(self, query, expiration=48):
 		url, self.params = self._translate_search(query)
-		string = 'fen_EASYNEWS_SEARCH_' + urlencode(self.params)
+		string = 'ezra_EASYNEWS_SEARCH_' + urlencode(self.params)
 		return cache_object(self._process_search, string, url, json=False, expiration=expiration)
 
 	def account(self):
@@ -86,7 +86,7 @@ class EasyNewsAPI:
 					yield result
 				except Exception as e:
 					from modules.kodi_utils import logger
-					logger('FEN easynews API Exception', str(e))
+					logger('EZRA easynews API Exception', str(e))
 		down_url = files.get('downURL')
 		dl_farm = files.get('dlFarm')
 		dl_port = files.get('dlPort')
@@ -117,7 +117,7 @@ class EasyNewsAPI:
 					yield result
 				except Exception as e:
 					from modules.kodi_utils import logger
-					logger('FEN easynews API Exception', str(e))
+					logger('EZRA easynews API Exception', str(e))
 		files = results.get('data', [])
 		sid = results.get('sid')
 		results = list(_process())
@@ -179,11 +179,11 @@ def clear_media_results_database():
 	dbcur = dbcon.cursor()
 	dbcur.execute('''PRAGMA synchronous = OFF''')
 	dbcur.execute('''PRAGMA journal_mode = OFF''')
-	dbcur.execute("SELECT id FROM maincache WHERE id LIKE 'fen_EASYNEWS_SEARCH_%'")
+	dbcur.execute("SELECT id FROM maincache WHERE id LIKE 'ezra_EASYNEWS_SEARCH_%'")
 	easynews_results = [str(i[0]) for i in dbcur.fetchall()]
 	if not easynews_results: return 'success'
 	try:
-		dbcur.execute("DELETE FROM maincache WHERE id LIKE 'fen_EASYNEWS_SEARCH_%'")
+		dbcur.execute("DELETE FROM maincache WHERE id LIKE 'ezra_EASYNEWS_SEARCH_%'")
 		for i in easynews_results: clear_property(i)
 		return 'success'
 	except: return 'failed'

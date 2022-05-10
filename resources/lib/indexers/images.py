@@ -204,5 +204,5 @@ class Images():
 		folder_path = self.params['folder_path']
 		delete_file(thumb_url)
 		delete_file(image_url)
-		set_property('fen.home_window.delete_image_finished', 'true')
+		set_property('ezra.home_window.delete_image_finished', 'true')
 

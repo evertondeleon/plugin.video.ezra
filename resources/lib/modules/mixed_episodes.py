@@ -22,7 +22,7 @@ def build_next_episode():
 			hidden_data = trakt_get_hidden_items('progress_watched')
 			data = [i for i in data if not i['media_ids']['tmdb'] in hidden_data]
 		except: pass
-	else: list_type = 'next_episode_fen'
+	else: list_type = 'next_episode_ezra'
 	if include_unwatched:
 		try: unwatched = [{'media_ids': i['media_ids'], 'season': 1, 'episode': 0, 'unwatched': True} for i in trakt_fetch_collection_watchlist('watchlist', 'tvshow')]
 		except: unwatched = []

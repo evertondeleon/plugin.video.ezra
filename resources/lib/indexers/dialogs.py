@@ -186,9 +186,9 @@ def enable_scrapers_choice():
 
 def folder_scraper_manager_choice(folder_info=None):
 	def _get_property(setting_id):
-		return get_property('fen_%s' % setting_id) or get_setting(setting_id)
+		return get_property('ezra_%s' % setting_id) or get_setting(setting_id)
 	def _set_property(setting_id, setting_value):
-		set_property('fen_%s' % setting_id, setting_value)
+		set_property('ezra_%s' % setting_id, setting_value)
 	def _clear_property(setting_id):
 		clear_property(setting_id)
 	def _exit_save_settings():
@@ -196,9 +196,9 @@ def folder_scraper_manager_choice(folder_info=None):
 			set_setting(name_setting % folder_no,  _get_property(name_setting % folder_no))
 			set_setting(movie_dir_setting % folder_no,  _get_property(movie_dir_setting % folder_no))
 			set_setting(tvshow_dir_setting % folder_no,  _get_property(tvshow_dir_setting % folder_no))
-			_clear_property('fen_%s' % name_setting % folder_no)
-			_clear_property('fen_%s' % movie_dir_setting % folder_no)
-			_clear_property('fen_%s' % tvshow_dir_setting % folder_no)
+			_clear_property('ezra_%s' % name_setting % folder_no)
+			_clear_property('ezra_%s' % movie_dir_setting % folder_no)
+			_clear_property('ezra_%s' % tvshow_dir_setting % folder_no)
 	def _return(passed_folder_info):
 		return folder_scraper_manager_choice(passed_folder_info)
 	def _make_folders():
@@ -233,12 +233,12 @@ def folder_scraper_manager_choice(folder_info=None):
 				_set_property(setting, 'None')
 				_return(folder_info)
 			else:
-				folder = dialog.browse(0, 'Fen', '')
+				folder = dialog.browse(0, 'Ezra', '')
 				if not folder: folder = 'None'
 				_set_property(setting, folder)
 				_return(folder_info)
 		else:
-			folder = dialog.browse(0, 'Fen', '')
+			folder = dialog.browse(0, 'Ezra', '')
 			if not folder: folder = 'None'
 			_set_property(setting, folder)
 			_return(folder_info)
@@ -338,7 +338,7 @@ def scraper_color_choice(setting):
 	chosen_color = color_choice()
 	if chosen_color: set_setting(setting, chosen_color)
 
-def color_choice(msg_dialog='Fen', no_color=False):
+def color_choice(msg_dialog='Ezra', no_color=False):
 	from modules.meta_lists import meta_colors
 	color_chart = meta_colors
 	color_display = ['[COLOR=%s]%s[/COLOR]' % (i, i.capitalize()) for i in color_chart]
@@ -369,8 +369,8 @@ def favorites_choice(params):
 	favourites = Favourites(params)
 	media_type, tmdb_id, title = params['media_type'], params['tmdb_id'], params['title']
 	current_favourites = favourites.get_favourites(media_type)
-	if any(i['tmdb_id'] == tmdb_id for i in current_favourites): action, text = favourites.remove_from_favourites, '%s Fen %s?' % (ls(32603), ls(32453))
-	else: action, text = favourites.add_to_favourites, '%s Fen %s?' % (ls(32602), ls(32453))
+	if any(i['tmdb_id'] == tmdb_id for i in current_favourites): action, text = favourites.remove_from_favourites, '%s Ezra %s?' % (ls(32603), ls(32453))
+	else: action, text = favourites.add_to_favourites, '%s Ezra %s?' % (ls(32602), ls(32453))
 	if not confirm_dialog(heading='Ezra - %s' % title, text=text, top_space=True): return
 	action()
 
@@ -469,7 +469,7 @@ def options_menu(params, meta=None):
 	if content in ('movie', 'episode'): listing += [(ls(32637), '', 'clear_scrapers_cache')]
 	listing += [('%s %s' % (ls(32118), ls(32513)), '', 'open_external_scrapers_choice')]
 	listing += [('%s %s %s' % (open_str, ls(32522), settings_str), '', 'open_scraper_settings')]
-	listing += [('%s %s %s' % (open_str, ls(32036), settings_str), '', 'open_fen_settings')]
+	listing += [('%s %s %s' % (open_str, ls(32036), settings_str), '', 'open_ezra_settings')]
 	listing += [(ls(32640), '', 'save_and_exit')]
 	list_items = list(_builder())
 	heading = ls(32646).replace('[B]', '').replace('[/B]', '')
@@ -496,7 +496,7 @@ def options_menu(params, meta=None):
 	elif choice == 'clear_scrapers_cache': return source_utils.clear_scrapers_cache()
 	elif choice == 'open_external_scrapers_choice': return external_scrapers_choice()
 	elif choice == 'open_scraper_settings': return execute_builtin('Addon.OpenSettings(script.module.ezscrapers)')
-	elif choice == 'open_fen_settings': return open_settings('0.0')
+	elif choice == 'open_ezra_settings': return open_settings('0.0')
 	if choice == 'clear_trakt_cache' and content in ('movie', 'tvshow', 'season', 'episode'): execute_builtin('Container.Refresh')
 	show_busy_dialog()
 	sleep(200)

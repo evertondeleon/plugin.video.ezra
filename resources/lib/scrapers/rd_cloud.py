@@ -45,7 +45,7 @@ class source:
 			self.sources = list(_process())
 		except Exception as e:
 			from modules.kodi_utils import logger
-			logger('FEN real-debrid scraper Exception', e)
+			logger('EZRA real-debrid scraper Exception', e)
 		internal_results(self.scrape_provider, self.sources)
 		return self.sources
 

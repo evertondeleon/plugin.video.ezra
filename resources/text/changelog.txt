@@ -1,8 +1,11 @@
+[B]Please utilize Tips (Tools->Tips for Use) to catch up on any changes and fixes
 
-[B]Please utilize Tips (Tools->Tips for Use) to catch up on any important new features. New features will be highlighted with a [COLOR chartreuse]NEW!!![/COLOR] label.[/B]
+[COLOR dodgerblue][B]0.0.7 - Dependancy/Requirement version fix[/B][/COLOR]
 
-[COLOR dodgerblue][B]Version 0.0.1[/B][/COLOR]
-- Initial fork. 
-
-
+0.0.6 - Cleaning up remaining Fen strings and code. Changelogs back
+0.0.5 - Cleanup of all "Fenom" related strings and code. Autoplay fixed.
+0.0.4 - Ezra repository added
+0.0.3 - Removed fen from headings and moved headings from inline to .po
+0.0.2 - Removed last traces of Fen/Fenom from language files
+0.0.1 - Forked from Fen - New API keys for TMDB and Trakt / New Artwork
 

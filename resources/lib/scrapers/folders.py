@@ -49,7 +49,7 @@ class source:
 			self.sources = list(_process())
 		except Exception as e:
 			from modules.kodi_utils import logger
-			logger('FEN folders scraper Exception', e)
+			logger('EZRA folders scraper Exception', e)
 		internal_results(self.scraper_name, self.sources)
 		return self.sources
 
@@ -83,7 +83,7 @@ class source:
 		folder_results = []
 		scrape_results_append = self.scrape_results.append
 		folder_results_append = folder_results.append
-		string = 'fen_FOLDERSCRAPER_%s_%s' % (self.scrape_provider, folder_name)
+		string = 'ezra_FOLDERSCRAPER_%s_%s' % (self.scrape_provider, folder_name)
 		folder_files = cache_object(self._make_dirs, string, folder_name, json=False, expiration=4)
 		folder_threads = list(make_thread_list(_process, folder_files, Thread))
 		[i.join() for i in folder_threads]

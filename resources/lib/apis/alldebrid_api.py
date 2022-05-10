@@ -9,7 +9,7 @@ from modules.settings_reader import get_setting, set_setting
 
 ls = kodi_utils.local_string
 base_url = 'https://api.alldebrid.com/v4/'
-user_agent = 'fen_for_kodi'
+user_agent = 'ezra_for_kodi'
 timeout = 20.0
 session = make_session(base_url)
 
@@ -42,7 +42,7 @@ class AllDebridAPI:
 		response = session.get(url, timeout=timeout).json()
 		response = response['data']
 		line = '%s[CR]%s[CR]%s'
-		kodi_utils.progressDialog.create('Fen', '')
+		kodi_utils.progressDialog.create('ezra', '')
 		kodi_utils.progressDialog.update(-1, line % (ls(32517), ls(32700) % response.get('base_url'), ls(32701) % response.get('pin')))
 		self.check_url = response.get('check_url')
 		kodi_utils.sleep(2000)
@@ -74,7 +74,7 @@ class AllDebridAPI:
 
 	def user_cloud(self):
 		url = 'magnet/status'
-		string = 'fen_ad_user_cloud'
+		string = 'ezra_ad_user_cloud'
 		return cache_object(self._get, string, url, False, 0.5)
 
 	def unrestrict_link(self, link):
@@ -211,7 +211,7 @@ class AllDebridAPI:
 		return True
 
 	def get_hosts(self):
-		string = 'fen_ad_valid_hosts'
+		string = 'ezra_ad_valid_hosts'
 		url = 'hosts'
 		hosts_dict = {'AllDebrid': []}
 		hosts = []
@@ -259,15 +259,15 @@ class AllDebridAPI:
 			dbcur = dbcon.cursor()
 			# USER CLOUD
 			try:
-				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('fen_ad_user_cloud',))
-				kodi_utils.clear_property('fen_ad_user_cloud')
+				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('ezra_ad_user_cloud',))
+				kodi_utils.clear_property('ezra_ad_user_cloud')
 				dbcon.commit()
 				user_cloud_success = True
 			except: user_cloud_success = False
 			# HOSTERS
 			try:
-				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('fen_ad_valid_hosts',))
-				kodi_utils.clear_property('fen_ad_valid_hosts')
+				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('ezra_ad_valid_hosts',))
+				kodi_utils.clear_property('ezra_ad_valid_hosts')
 				dbcon.commit()
 				dbcon.close()
 				hoster_links_success = True

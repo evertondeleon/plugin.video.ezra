@@ -218,9 +218,9 @@ class Navigator:
 
 	def settings(self):
 		settings_str = ls(32247)
-		fen_str, ez_scr_str, myaccounts_str = ls(32036), ls(32522), ls(33025)
+		ezra_str, ez_scr_str, myaccounts_str = ls(32036), ls(32522), ls(33025)
 		n_ins, lst_ins = _in_str % (settings_str.upper(), '%s'), (_in_str % (settings_str, '%s')).replace('[B]', '').replace(': [/B]', ' ')
-		self.AD({'mode': 'open_settings', 'query': '0.0', 'list_name': lst_ins % fen_str}, n_ins % fen_str, 'settings.png', False)
+		self.AD({'mode': 'open_settings', 'query': '0.0', 'list_name': lst_ins % ezra_str}, n_ins % ezra_str, 'settings.png', False)
 		self.AD({'mode': 'external_settings', 'ext_addon': 'script.module.ezscrapers', 'list_name': lst_ins % ez_scr_str},
 																				n_ins % ez_scr_str, 'settings.png', False)
 		self.AD({'mode': 'external_settings', 'ext_addon': 'script.module.myaccounts', 'list_name': lst_ins % myaccounts_str},
@@ -276,11 +276,11 @@ class Navigator:
 
 	def log_utils(self):
 		log_path = 'special://home/addons/%s/changelog.txt'
-		fen_str, cl_str, fs_str, ma_str, lut_str, k_str = ls(32036), ls(32508), ls(32522), ls(33025), ls(32777), ls(32538)
+		ezra_str, cl_str, fs_str, ma_str, lut_str, k_str = ls(32036), ls(32508), ls(32522), ls(33025), ls(32777), ls(32538)
 		lv_str, lu_str = ls(32509), ls(32853)
-		fen_vstr = addon().getAddonInfo('version')
+		ezra_vstr = addon().getAddonInfo('version')
 		sc_v, ma_v = addon('script.module.ezscrapers').getAddonInfo('version'), addon('script.module.myaccounts').getAddonInfo('version')
-		mt_str, mh_str = tp(log_path % 'plugin.video.ezra/resources/text'), '[B]%s[/B]: %s  [I](v.%s)[/I]' % (cl_str.upper(), fen_str, fen_vstr)
+		mt_str, mh_str = tp(log_path % 'plugin.video.ezra/resources/text'), '[B]%s[/B]: %s  [I](v.%s)[/I]' % (cl_str.upper(), ezra_str, ezra_vstr)
 		sct_str, mat_str = tp(log_path % 'script.module.ezscrapers'), tp(log_path % 'script.module.myaccounts')
 		sch_str, mah_str = '[B]%s[/B]: %s  [I](v.%s)[/I]' % (cl_str.upper(), fs_str, sc_v), '[B]%s[/B]: %s  [I](v.%s)[/I]' % (cl_str.upper(), ma_str, ma_v)
 		klv_h, klu_h, kl_loc = '[B]%s[/B]: %s %s' % (lut_str.upper(), k_str, lv_str), '[B]%s[/B]: %s' % (lut_str.upper(), lu_str), tp('special://logpath/kodi.log')
@@ -424,14 +424,14 @@ class Navigator:
 
 	def because_you_watched(self):
 		from modules.watched_status import get_watched_info_movie, get_watched_info_tv
-		def _convert_fen_watched_episodes_info(watched_indicators):
+		def _convert_ezra_watched_episodes_info(watched_indicators):
 			seen = set()
 			_watched = get_watched_info_tv(watched_indicators)
 			_watched.sort(key=lambda x: (x[0], x[1], x[2]), reverse=True)
 			return [(i[0], i[3], i[4], [(i[1], i[2])]) for i in _watched if not (i[0] in seen or seen.add(i[0]))]
 		watched_indicators = wi()
 		media_type = self.params_get('menu_type')
-		function = get_watched_info_movie if media_type == 'movie' else _convert_fen_watched_episodes_info
+		function = get_watched_info_movie if media_type == 'movie' else _convert_ezra_watched_episodes_info
 		mode = 'build_movie_list' if media_type == 'movie' else 'build_tvshow_list'
 		action = 'tmdb_movies_recommendations' if media_type == 'movie' else 'tmdb_tv_recommendations'
 		recently_watched = function(watched_indicators)

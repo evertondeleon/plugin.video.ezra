@@ -76,7 +76,7 @@ class BaseDialog(kodi_utils.window_xml_dialog):
 		kodi_utils.sleep(time)
 
 	def set_home_property(self, prop, value):
-		kodi_utils.set_property('fen.home_window.%s' % prop, value)
+		kodi_utils.set_property('ezra.home_window.%s' % prop, value)
 
 	def get_home_property(self, prop):
-		return kodi_utils.get_property('fen.home_window.%s' % prop)
+		return kodi_utils.get_property('ezra.home_window.%s' % prop)

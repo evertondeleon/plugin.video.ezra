@@ -193,16 +193,16 @@ class TVShows:
 			set_property('unwatchedepisodes', string(total_unwatched))
 			set_property('totalepisodes', string(total_aired_eps))
 			set_property('totalseasons', string(total_seasons))
-			set_property('fen_sort_order', string(item_position))
+			set_property('ezra_sort_order', string(item_position))
 			if self.is_widget:
-				set_property('fen_widget', 'true')
-				set_property('fen_playcount', string(playcount))
-				set_property('fen_extras_menu_params', extras_params)
-				set_property('fen_options_menu_params', options_params)
-				set_property('fen_trakt_manager_params', trakt_manager_params)
-				set_property('fen_fav_manager_params', fav_manager_params)
-				set_property('fen_random_params', random_params)
-			else: set_property('fen_widget', 'false')
+				set_property('ezra_widget', 'true')
+				set_property('ezra_playcount', string(playcount))
+				set_property('ezra_extras_menu_params', extras_params)
+				set_property('ezra_options_menu_params', options_params)
+				set_property('ezra_trakt_manager_params', trakt_manager_params)
+				set_property('ezra_fav_manager_params', fav_manager_params)
+				set_property('ezra_random_params', random_params)
+			else: set_property('ezra_widget', 'false')
 			self.append((url_params, listitem, self.is_folder))
 		except: pass
 
@@ -225,13 +225,13 @@ class TVShows:
 		self.open_extras = extras_open_action('tvshow')
 		self.fanart_enabled = self.meta_user_info['extra_fanart_enabled']
 		self.hide_watched = self.is_widget and self.meta_user_info['widget_hide_watched']
-		self.watched_title = 'Trakt' if self.watched_indicators == 1 else 'Fen'
+		self.watched_title = 'Trakt' if self.watched_indicators == 1 else 'Ezra'
 		self.is_folder = False if self.open_extras else True
 		self.poster_main, self.poster_backup, self.fanart_main, self.fanart_backup = get_art_provider()
 		self.append = self.items.append
 		threads = list(make_thread_list_enumerate(self.build_tvshow_content, self.list, Thread))
 		[i.join() for i in threads]
-		self.items.sort(key=lambda k: int(k[1].getProperty('fen_sort_order')))
+		self.items.sort(key=lambda k: int(k[1].getProperty('ezra_sort_order')))
 		return self.items
 
 	def add_dir(self, url_params, list_name=nextpage_str, iconImage=item_next, isFolder=True):

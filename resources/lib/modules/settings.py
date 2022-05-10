@@ -132,8 +132,8 @@ def calendar_sort_order():
 def lists_sort_order(setting):
 	return int(get_setting('sort.%s' % setting, '0'))
 
-def auto_start_fen():
-	return get_setting('auto_start_fen') == 'true'
+def auto_start_ezra():
+	return get_setting('auto_start_ezra') == 'true'
 
 def sync_kodi_library_watchstatus():
 	return get_setting('sync_kodi_library_watchstatus') == 'true'
@@ -252,7 +252,7 @@ def nextep_content_settings():
 	sort_type = int(get_setting('nextep.sort_type'))
 	sort_order = int(get_setting('nextep.sort_order'))
 	sort_direction = sort_order == 0
-	sort_key = 'fen_last_played' if sort_type == 0 else 'fen_first_aired' if sort_type == 1 else 'fen_name'
+	sort_key = 'ezra_last_played' if sort_type == 0 else 'ezra_first_aired' if sort_type == 1 else 'ezra_name'
 	include_unaired = get_setting('nextep.include_unaired') == 'true'
 	include_unwatched = get_setting('nextep.include_unwatched') == 'true'
 	sort_airing_today_to_top = get_setting('nextep.sort_airing_today_to_top', 'false') == 'true'

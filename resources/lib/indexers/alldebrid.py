@@ -71,8 +71,8 @@ def resolve_ad(params):
 	url = params['url']
 	resolved_link = AllDebrid.unrestrict_link(url)
 	if params.get('play', 'false') != 'true' : return resolved_link
-	from modules.player import FenPlayer
-	FenPlayer().run(resolved_link, 'video')
+	from modules.player import EzraPlayer
+	EzraPlayer().run(resolved_link, 'video')
 
 def ad_account_info():
 	from datetime import datetime

@@ -120,17 +120,17 @@ class RealDebridAPI:
 		return self._get(url)
 
 	def user_cloud(self):
-		string = 'fen_rd_user_cloud'
+		string = 'ezra_rd_user_cloud'
 		url = 'torrents'
 		return cache_object(self._get, string, url, False, 0.5)
 
 	def downloads(self):
-		string = 'fen_rd_downloads'
+		string = 'ezra_rd_downloads'
 		url = 'downloads'
 		return cache_object(self._get, string, url, False, 0.5)
 
 	def user_cloud_info(self, file_id):
-		string = 'fen_rd_user_cloud_info_%s' % file_id
+		string = 'ezra_rd_user_cloud_info_%s' % file_id
 		url = 'torrents/info/%s' % file_id
 		return cache_object(self._get, string, url, False, 2)
 
@@ -185,7 +185,7 @@ class RealDebridAPI:
 		return response
 
 	def get_hosts(self):
-		string = 'fen_rd_valid_hosts'
+		string = 'ezra_rd_valid_hosts'
 		url = 'hosts/domains'
 		hosts_dict = {'Real-Debrid': []}
 		try:
@@ -487,31 +487,31 @@ class RealDebridAPI:
 			dbcur = dbcon.cursor()
 			# USER CLOUD
 			try:
-				dbcur.execute("""SELECT data FROM maincache WHERE id=?""", ('fen_rd_user_cloud',))
+				dbcur.execute("""SELECT data FROM maincache WHERE id=?""", ('ezra_rd_user_cloud',))
 				try: 
 					user_cloud_cache = eval(dbcur.fetchone()[0])
 					user_cloud_info_caches = [i['id'] for i in user_cloud_cache]
 				except: user_cloud_success = True
 				if not user_cloud_success:
-					dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('fen_rd_user_cloud',))
-					clear_property("fen_rd_user_cloud")
+					dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('ezra_rd_user_cloud',))
+					clear_property("ezra_rd_user_cloud")
 					for i in user_cloud_info_caches:
-						dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('fen_rd_user_cloud_info_%s' % i,))
-						clear_property("fen_rd_user_cloud_info_%s" % i)
+						dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('ezra_rd_user_cloud_info_%s' % i,))
+						clear_property("ezra_rd_user_cloud_info_%s" % i)
 					dbcon.commit()
 					user_cloud_success = True
 			except: user_cloud_success = False
 			# DOWNLOAD LINKS
 			try:
-				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('fen_rd_downloads',))
-				clear_property("fen_rd_downloads")
+				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('ezra_rd_downloads',))
+				clear_property("ezra_rd_downloads")
 				dbcon.commit()
 				download_links_success = True
 			except: download_links_success = False
 			# HOSTERS
 			try:
-				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('fen_rd_valid_hosts',))
-				clear_property('fen_rd_valid_hosts')
+				dbcur.execute("""DELETE FROM maincache WHERE id=?""", ('ezra_rd_valid_hosts',))
+				clear_property('ezra_rd_valid_hosts')
 				dbcon.commit()
 				dbcon.close()
 				hoster_links_success = True

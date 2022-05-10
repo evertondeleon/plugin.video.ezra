@@ -40,7 +40,7 @@ def resolve_internal_sources(scrape_provider, item_id, url_dl, direct_debrid_lin
 			from indexers.furk import t_file_browser
 			from modules.source_utils import seas_ep_query_list
 			from modules.kodi_utils import get_property
-			meta = json.loads(get_property('fen_playback_meta'))
+			meta = json.loads(get_property('ezra_playback_meta'))
 			filtering_list = seas_ep_query_list(meta['season'], meta['episode']) if meta['media_type'] == 'episode' else ''
 			t_files = t_file_browser(item_id, filtering_list)
 			url = t_files[0]['url_dl']

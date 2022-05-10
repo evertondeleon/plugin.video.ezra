@@ -78,11 +78,11 @@ def build_season_list(params):
 				set_property('unwatchedepisodes', string(unwatched))
 				set_property('totalepisodes', string(episode_count))
 				if is_widget:
-					set_property('fen_widget', 'true')
-					set_property('fen_playcount', string(playcount))
-					set_property('fen_extras_menu_params', extras_params)
-					set_property('fen_options_menu_params', options_params)
-				else: set_property('fen_widget', 'false')
+					set_property('ezra_widget', 'true')
+					set_property('ezra_playcount', string(playcount))
+					set_property('ezra_extras_menu_params', extras_params)
+					set_property('ezra_options_menu_params', options_params)
+				else: set_property('ezra_widget', 'false')
 				yield (url_params, listitem, True)
 			except: pass
 	__handle__ = int(argv[1])
@@ -115,7 +115,7 @@ def build_season_list(params):
 	if not show_specials(): season_data = [i for i in season_data if not i['season_number'] == 0]
 	season_data.sort(key=lambda k: k['season_number'])
 	use_season_title = use_season_title_info()
-	watched_title = 'Trakt' if watched_indicators == 1 else 'Fen'
+	watched_title = 'Trakt' if watched_indicators == 1 else 'Ezra'
 	add_items(__handle__, list(_process()))
 	set_content(__handle__, 'seasons')
 	end_directory(__handle__, False if is_widget else None)

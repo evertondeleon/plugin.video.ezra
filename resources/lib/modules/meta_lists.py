@@ -205,11 +205,11 @@ media_lists = (
 		"'tmdb_people%'",
 		"'imdb_keyword%'",
 		"'imdb_blunders%'",
-		"'fen_FURK_T_FILE%'",
-		"'fen_pm_instant_transfer%'",
-		"'fen_rd_check_hash%'",
-		"'FEN_AD_%'",
-		"'FEN_RD_%'",
-		"'FEN_FOLDER_%'",
+		"'ezra_FURK_T_FILE%'",
+		"'ezra_pm_instant_transfer%'",
+		"'ezra_rd_check_hash%'",
+		"'EZRA_AD_%'",
+		"'EZRA_RD_%'",
+		"'EZRA_FOLDER_%'",
 		"'https%'"
 	)

@@ -4,7 +4,7 @@
     <category label="32001">
         <!-- General -->
         <setting label="32001" type="lsep" />
-        <setting id="auto_start_fen" type="bool" label="32017" default="false" />
+        <setting id="auto_start_ezra" type="bool" label="32017" default="false" />
         <setting id="widget_hide_watched" type="bool" label="32465" default="false" />
         <setting id="kodi_menu_cache" type="bool" label="32539" default="true" />
         <!-- Extras -->

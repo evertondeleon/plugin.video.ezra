@@ -310,7 +310,7 @@ def clear_cache(cache_type, silent=False):
 def clear_all_cache():
 	if not kodi_utils.confirm_dialog(): return
 	line = '[CR]%s....[CR]%s'
-	kodi_utils.progressDialog.create('Fen', '')
+	kodi_utils.progressDialog.create('Ezra', '')
 	caches = (('meta', '%s %s' % (ls(32527), ls(32524))), ('internal_scrapers', '%s %s' % (ls(32096), ls(32524))), ('external_scrapers', '%s %s' % (ls(32118), ls(32524))),
 			('trakt', ls(32087)), ('imdb', '%s %s' % (ls(32064), ls(32524))), ('list', '%s %s' % (ls(32815), ls(32524))),
 			('pm_cloud', '%s %s' % (ls(32061), ls(32524))), ('rd_cloud', '%s %s' % (ls(32054), ls(32524))), ('ad_cloud', '%s %s' % (ls(32063), ls(32524))))
@@ -355,7 +355,7 @@ def upload_logfile():
 	if not kodi_utils.path_exists(log_file): return kodi_utils.ok_dialog(text='Error. Log File Not Found.', top_space=True)
 	try:
 		with kodi_utils.open_file(log_file) as f: text = f.read()
-		UserAgent = 'Fen %s' % kodi_utils.addon().getAddonInfo('version')
+		UserAgent = 'Ezra %s' % kodi_utils.addon().getAddonInfo('version')
 		response = requests.post(''.join([url, 'documents']), data=text.encode('utf-8', errors='ignore'), headers={'User-Agent': UserAgent}).json()
 		if 'key' in response: kodi_utils.ok_dialog(text=''.join([url, response['key']]), top_space=True)
 		else: kodi_utils.ok_dialog(text='Error. Log Upload Failed')

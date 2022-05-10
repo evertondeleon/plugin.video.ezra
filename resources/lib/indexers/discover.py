@@ -21,7 +21,7 @@ class Discover:
 		self.view = 'view.main'
 		self.media_type = params.get('media_type', None)
 		self.key = params.get('key', None)
-		if self.media_type: self.window_id = 'FEN_%s_discover_params' % self.media_type.upper()
+		if self.media_type: self.window_id = 'EZRA_%s_discover_params' % self.media_type.upper()
 		else: self.window_id = ''
 		try: self.discover_params = json.loads(kodi_utils.get_property(self.window_id))
 		except: self.discover_params = {}
@@ -425,7 +425,7 @@ class Discover:
 				except: pass
 		__handle__ = int(argv[1])
 		media_type = media_type if media_type else self.media_type
-		string = 'fen_discover_%s_%%' % media_type
+		string = 'ezra_discover_%s_%%' % media_type
 		dbcon = database.connect(kodi_utils.maincache_db, timeout=40.0, isolation_level=None)
 		dbcur = dbcon.cursor()
 		dbcur.execute('''PRAGMA synchronous = OFF''')
@@ -442,7 +442,7 @@ class Discover:
 		self._end_directory()
 
 	def help(self):
-		text_file = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/text/tips/135. Fen Discover.txt')
+		text_file = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/text/tips/135. Ezra Discover.txt')
 		return kodi_utils.show_text(self.heading_base % ls(32487), file=text_file)
 
 	def _set_default_params(self, media_type):
@@ -631,7 +631,7 @@ class Discover:
 def set_history(media_type, name, query):
 	from caches.main_cache import main_cache
 	from datetime import timedelta
-	string = 'fen_discover_%s_%s' % (media_type, query)
+	string = 'ezra_discover_%s_%s' % (media_type, query)
 	cache = main_cache.get(string)
 	if cache: return
 	if media_type == 'movie':

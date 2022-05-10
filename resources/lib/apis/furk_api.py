@@ -55,21 +55,21 @@ class FurkAPI:
 			if '@files' in query: search_in, mod_level = '', 'no'
 			else: search_in, mod_level = '&attrs=name', mod_settings[get_setting('furk.mod.level', '0')]
 			url = base_url + search_url % (self.api_key, query, 'extended', mod_level, search_in)
-			string = 'fen_FURK_SEARCH_%s' % url
+			string = 'ezra_FURK_SEARCH_%s' % url
 			return cache_object(self._process_files, string, url, json=False, expiration=expiration)
 		except: return
 
 	def direct_search(self, query):
 		try:
 			url = base_url + search_direct_url % (self.api_key, query)
-			string = 'fen_FURK_SEARCH_DIRECT_%s' % url
+			string = 'ezra_FURK_SEARCH_DIRECT_%s' % url
 			return cache_object(self._process_files, string, url, json=False, expiration=48)
 		except: return
 
 	def t_files(self, file_id):
 		try:
 			url = base_url + tfile_url % (self.api_key, file_id)
-			string = 'fen_%s_%s' % ('FURK_T_FILE', file_id)
+			string = 'ezra_%s_%s' % ('FURK_T_FILE', file_id)
 			return cache_object(self._process_tfiles, string, url, json=False, expiration=168)
 		except: return
 
@@ -148,11 +148,11 @@ def clear_media_results_database():
 	dbcur = dbcon.cursor()
 	dbcur.execute('''PRAGMA synchronous = OFF''')
 	dbcur.execute('''PRAGMA journal_mode = OFF''')
-	dbcur.execute("SELECT id FROM maincache WHERE id LIKE 'fen_FURK_SEARCH_%'")
+	dbcur.execute("SELECT id FROM maincache WHERE id LIKE 'ezra_FURK_SEARCH_%'")
 	try:
 		furk_results = [str(i[0]) for i in dbcur.fetchall()]
 		if not furk_results: return 'success'
-		dbcur.execute("DELETE FROM maincache WHERE id LIKE 'fen_FURK_SEARCH_%'")
+		dbcur.execute("DELETE FROM maincache WHERE id LIKE 'ezra_FURK_SEARCH_%'")
 		for i in furk_results: clear_property(i)
 		return 'success'
 	except: return 'failed'

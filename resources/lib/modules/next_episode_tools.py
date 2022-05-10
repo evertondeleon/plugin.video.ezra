@@ -8,7 +8,7 @@ from apis.trakt_api import trakt_get_hidden_items
 from metadata import tvshow_meta, season_episodes_meta
 from modules import kodi_utils, settings
 from modules.sources import Sources
-from modules.player import FenPlayer
+from modules.player import EzraPlayer
 from modules.watched_status import get_next_episodes, get_watched_status_tvshow, get_watched_info_tv
 from modules.utils import get_datetime, make_thread_list, title_key
 # from modules.kodi_utils import logger
@@ -132,22 +132,22 @@ def execute_nextep(meta, nextep_settings):
 		return nextep_params
 	def _get_nextep_url():
 		Sources().playback_prep(nextep_params)
-		return kodi_utils.get_property('fen_background_url')
+		return kodi_utils.get_property('ezra_background_url')
 	def _confirm_threshold():
 		nextep_threshold = nextep_settings['threshold']
 		if nextep_threshold == 0: return True
-		try: current_number = int(kodi_utils.get_property('fen_total_autoplays'))
+		try: current_number = int(kodi_utils.get_property('ezra_total_autoplays'))
 		except: current_number = 1
 		if current_number == nextep_threshold:
 			current_number = 1
-			kodi_utils.set_property('fen_total_autoplays', str(current_number))
+			kodi_utils.set_property('ezra_total_autoplays', str(current_number))
 			if open_window(('windows.next_episode', 'NextEpisode'), 'next_episode.xml', meta=nextep_meta, function='confirm'): return True
 			else:
 				kodi_utils.notification(32736, 1500)
 				return False
 		else:
 			current_number += 1
-			kodi_utils.set_property('fen_total_autoplays', str(current_number))
+			kodi_utils.set_property('ezra_total_autoplays', str(current_number))
 			return True
 	def _continue_action():
 		if run_popup: action = open_window(('windows.next_episode', 'NextEpisode'), 'next_episode.xml', meta=nextep_meta, function='next_ep')
@@ -173,8 +173,8 @@ def execute_nextep(meta, nextep_settings):
 				kodi_utils.sleep(200)
 			except: pass
 		return final_action
-	kodi_utils.clear_property('fen_background_url')
-	player = FenPlayer()
+	kodi_utils.clear_property('ezra_background_url')
+	player = EzraPlayer()
 	run_popup, display_nextep_popup = nextep_settings['run_popup'], nextep_settings['window_time']
 	nextep_prep, nextep_threshold_check = nextep_settings['start_prep'], nextep_settings['threshold_check']
 	nextep_meta, nextep_params = _get_nextep_params()

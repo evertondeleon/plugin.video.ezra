@@ -4,7 +4,7 @@ from random import choice
 from threading import Thread
 import metadata
 from modules.sources import Sources
-from modules.player import FenPlayer
+from modules.player import EzraPlayer
 from modules.settings import date_offset, metadata_user_info
 from modules.kodi_utils import execute_builtin, build_url, get_property, set_property, clear_property, sleep
 from modules.utils import adjust_premiered_date, get_datetime
@@ -22,21 +22,21 @@ def get_random_episode(tmdb_id, continual=False):
 	if continual:
 		episode_list = []
 		try:
-			episode_history = json.loads(get_property('fen_random_episode_history'))
+			episode_history = json.loads(get_property('ezra_random_episode_history'))
 			if tmdb_key in episode_history: episode_list = episode_history[tmdb_key]
-			else: set_property('fen_random_episode_history', '')
+			else: set_property('ezra_random_episode_history', '')
 		except: pass
 		first_run = len(episode_list) == 0
 		episodes_data = [i for i in episodes_data if not i in episode_list]
 		if not episodes_data:
-			set_property('fen_random_episode_history', '')
+			set_property('ezra_random_episode_history', '')
 			return get_random_episode(tmdb_id, continual=True)
 	else: first_run = True
 	chosen_episode = choice(episodes_data)
 	if continual:
 		episode_list.append(chosen_episode)
 		episode_history = {str(tmdb_id): episode_list}
-		set_property('fen_random_episode_history', json.dumps(episode_history))
+		set_property('ezra_random_episode_history', json.dumps(episode_history))
 	title, season, episode = meta['title'], int(chosen_episode['season']), int(chosen_episode['episode'])
 	query = title + ' S%.2dE%.2d' % (season, episode)
 	display_name = '%s - %dx%.2d' % (title, season, episode)
@@ -59,9 +59,9 @@ def play_random(tmdb_id):
 def play_random_continual(tmdb_id):
 	url_params = get_random_episode(tmdb_id, continual=True)
 	if not url_params: return {'pass': True}
-	player = FenPlayer()
+	player = EzraPlayer()
 	Sources().playback_prep(url_params)
-	url = get_property('fen_background_url')
-	clear_property('fen_background_url')
+	url = get_property('ezra_background_url')
+	clear_property('ezra_background_url')
 	while player.isPlayingVideo(): sleep(100)
 	player.run(url)

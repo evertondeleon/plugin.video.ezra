@@ -53,8 +53,8 @@ def resolve_easynews(params):
 	url_dl = params['url_dl']
 	resolved_link = EasyNews.resolve_easynews(url_dl)
 	if params.get('play', 'false') != 'true' : return resolved_link
-	from modules.player import FenPlayer
-	FenPlayer().run(resolved_link, 'video')
+	from modules.player import EzraPlayer
+	EzraPlayer().run(resolved_link, 'video')
 
 def account_info(params):
 	from datetime import datetime

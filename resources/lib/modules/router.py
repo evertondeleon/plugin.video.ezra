@@ -65,8 +65,8 @@ def routing(argv2):
 			from modules.sources import Sources
 			Sources().play_file(params['title'], params['source'])
 		elif mode == 'media_play':
-			from modules.player import FenPlayer
-			FenPlayer().run(params.get('url', None), params.get('media_type', None))
+			from modules.player import EzraPlayer
+			EzraPlayer().run(params.get('url', None), params.get('media_type', None))
 	elif 'choice' in mode:
 		from indexers import dialogs
 		if mode == 'scraper_color_choice':
