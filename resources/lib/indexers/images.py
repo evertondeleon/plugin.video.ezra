@@ -8,7 +8,7 @@ from apis.imdb_api import imdb_images, people_get_imdb_id, imdb_people_images
 from modules.kodi_utils import translate_path, notification, set_property, make_listitem, list_dirs, delete_file
 # from modules.kodi_utils import logger
 
-icon_directory = translate_path('special://home/addons/script.ezart/resources/media')
+icon_directory = translate_path('special://home/addons/plugin.video.ezra/resources/media')
 
 icon = translate_path('special://home/addons/plugin.video.ezra/icon.png')
 fanart = translate_path('special://home/addons/plugin.video.ezra/fanart.png')

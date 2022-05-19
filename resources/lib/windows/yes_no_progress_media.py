@@ -51,7 +51,7 @@ class YesNoProgressMedia(BaseDialog):
 		self.poster_main, self.poster_backup, self.fanart_main, self.fanart_backup = get_art_provider()
 		self.title = self.meta['title']
 		self.year = str(self.meta['year'])
-		self.poster = self.meta.get(self.poster_main) or self.meta.get(self.poster_backup) or translate_path('special://home/addons/script.ezart/resources/media/box_office.png')
+		self.poster = self.meta.get(self.poster_main) or self.meta.get(self.poster_backup) or translate_path('special://home/addons/plugin.video.ezra/resources/media/box_office.png')
 		self.fanart = self.meta.get(self.fanart_main) or self.meta.get(self.fanart_backup) or ''
 		self.clearlogo = self.meta['clearlogo'] if get_fanart_data() else ''
 

@@ -11,7 +11,7 @@ add_items, set_content, end_directory, set_view_mode = kodi_utils.add_items, kod
 adjust_premiered_date_function, get_datetime_function, get_watched_status, get_watched_info = adjust_premiered_date, get_datetime, get_watched_status_season, get_watched_info_tv
 metadata_user_info, watched_indicators_info, show_unaired_info = settings.metadata_user_info, settings.watched_indicators, settings.show_unaired
 get_art_provider, show_specials, use_season_title_info = settings.get_art_provider, settings.show_specials, settings.use_season_title
-poster_empty, fanart_empty = ts('special://home/addons/script.ezart/resources/media/box_office.png'), ts('special://home/addons/plugin.video.ezra/fanart.png')
+poster_empty, fanart_empty = ts('special://home/addons/plugin.video.ezra/resources/media/box_office.png'), ts('special://home/addons/plugin.video.ezra/fanart.png')
 season_str, watched_str, unwatched_str, extras_str, options_str = ls(32537), ls(32642), ls(32643), ls(32645), ls(32646)
 string, run_plugin, unaired_label, tmdb_poster = str, 'RunPlugin(%s)', '[COLOR red][I]%s[/I][/COLOR]', 'https://image.tmdb.org/t/p/'
 

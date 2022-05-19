@@ -22,8 +22,8 @@ tmdb_special_key_dict = {'tmdb_tv_languages': 'language', 'tmdb_tv_networks': 'n
 personal_dict = {'in_progress_tvshows': ('modules.watched_status', 'get_in_progress_tvshows'), 'favourites_tvshows': ('modules.favourites', 'retrieve_favourites'),
 				'watched_tvshows': ('modules.watched_status', 'get_watched_items')}
 run_plugin, container_update, container_refresh = 'RunPlugin(%s)', 'Container.Update(%s)', 'Container.Refresh(%s)'
-item_jump, item_next = tp('special://home/addons/script.ezart/resources/media/item_jump.png'), tp('special://home/addons/script.ezart/resources/media/item_next.png')
-poster_empty, fanart_empty = tp('special://home/addons/script.ezart/resources/media/box_office.png'), tp('special://home/addons/plugin.video.ezra/fanart.png')
+item_jump, item_next = tp('special://home/addons/plugin.video.ezra/resources/media/item_jump.png'), tp('special://home/addons/plugin.video.ezra/resources/media/item_next.png')
+poster_empty, fanart_empty = tp('special://home/addons/plugin.video.ezra/resources/media/box_office.png'), tp('special://home/addons/plugin.video.ezra/fanart.png')
 watched_str, unwatched_str, traktmanager_str = ls(32642), ls(32643), ls(32198)
 favmanager_str, extras_str, options_str, random_str, recomm_str = ls(32197), ls(32645), ls(32646), ls(32611), '[B]%s...[/B]' % ls(32503)
 exit_str, nextpage_str, switchjump_str, browse_str, jumpto_str = ls(32650), ls(32799), ls(32784), ls(32652), ls(32964)

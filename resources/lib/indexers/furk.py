@@ -12,7 +12,7 @@ EXPIRES_1_HOUR = timedelta(hours=1)
 ls = kodi_utils.local_string
 build_url = kodi_utils.build_url
 make_listitem = kodi_utils.make_listitem
-default_furk_icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/furk.png')
+default_furk_icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/furk.png')
 fanart = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 Furk = FurkAPI()
 formats = ('.3gp', ''),('.aac', ''),('.flac', ''),('.m4a', ''),('.mp3', ''),('.ogg', ''),('.raw', ''),('.wav', ''),('.wma', ''),('.webm', ''),('.ra', ''),('.rm', '')

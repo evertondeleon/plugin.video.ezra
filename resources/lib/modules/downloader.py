@@ -17,7 +17,7 @@ from modules.utils import clean_file_name, clean_title, safe_string, remove_acce
 ls = kodi_utils.local_string
 ctx = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
 levels =['../../../..', '../../..', '../..', '..']
-poster_empty = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/box_office.png')
+poster_empty = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/box_office.png')
 video_extensions = ('m4v', '3g2', '3gp', 'nsv', 'tp', 'ts', 'ty', 'pls', 'rm', 'rmvb', 'mpd', 'ifo', 'mov', 'qt', 'divx', 'xvid', 'bivx', 'vob', 'nrg', 'img', 'iso', 'udf', 'pva',
 					'wmv', 'asf', 'asx', 'ogm', 'm2v', 'avi', 'bin', 'dat', 'mpg', 'mpeg', 'mp4', 'mkv', 'mk3d', 'avc', 'vp3', 'svq3', 'nuv', 'viv', 'dv', 'fli', 'flv', 'wpl',
 					'xspf', 'vdr', 'dvr-ms', 'xsp', 'mts', 'm2t', 'm2ts', 'evo', 'ogv', 'sdp', 'avs', 'rec', 'url', 'pxml', 'vc1', 'h264', 'rcv', 'rss', 'mpls', 'mpl', 'webm',
@@ -52,7 +52,7 @@ def runner(params):
 				pack_choices = [dict(params, **{'pack_files':item}) for item in debrid_files]
 				icon = {'Real-Debrid': 'realdebrid.png', 'Premiumize.me': 'premiumize.png', 'AllDebrid': 'alldebrid.png'}[provider]
 			except: return kodi_utils.notification(32692)
-		default_icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/%s' % icon)
+		default_icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/%s' % icon)
 		chosen_list = select_pack_item(pack_choices, params['highlight'], default_icon)
 		if not chosen_list: return
 		if provider == 'furk': show_package = True

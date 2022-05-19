@@ -13,7 +13,7 @@ from modules.utils import sort_list, sort_for_article, make_thread_list, jsondat
 
 ls, logger = kodi_utils.local_string, kodi_utils.logger
 CLIENT_ID = 'e3a8d1c673dfecb7f669b23ecbf77c75fcfd24d3e8c3dbc7f79ed995262fa1db'
-trakt_icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/trakt.png')
+trakt_icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/trakt.png')
 trakt_str = ls(32037)
 API_ENDPOINT = 'https://api.trakt.tv/%s'
 timeout = 20

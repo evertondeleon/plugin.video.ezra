@@ -212,7 +212,7 @@ def choose_view(view_type, content):
 	from sys import argv
 	__handle__ = int(argv[1])
 	set_view_str = local_string(32547)
-	settings_icon = translate_path('special://home/addons/script.ezart/resources/media/settings.png')
+	settings_icon = translate_path('special://home/addons/plugin.video.ezra/resources/media/settings.png')
 	fanart = translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 	listitem = make_listitem()
 	listitem.setLabel(set_view_str)
@@ -281,7 +281,7 @@ def build_url(url_params):
 
 def add_dir(url_params, list_name, __handle__, iconImage='DefaultFolder.png', fanartImage=None, isFolder=True):
 	fanart = fanartImage or translate_path('special://home/addons/plugin.video.ezra/fanart.png')
-	icon = translate_path('special://home/addons/script.ezart/resources/media/%s' % iconImage)
+	icon = translate_path('special://home/addons/plugin.video.ezra/resources/media/%s' % iconImage)
 	url = build_url(url_params)
 	listitem = make_listitem()
 	listitem.setLabel(list_name)

@@ -9,7 +9,7 @@ from modules.kodi_utils import translate_path, show_busy_dialog, hide_busy_dialo
 
 icon = translate_path('special://home/addons/plugin.video.ezra/icon.png')
 fanart = translate_path('special://home/addons/plugin.video.ezra/fanart.png')
-next_icon = translate_path('special://home/addons/script.ezart/resources/media/item_next.png')
+next_icon = translate_path('special://home/addons/plugin.video.ezra/resources/media/item_next.png')
 
 class ThumbImageViewer(BaseDialog):
 	def __init__(self, *args, **kwargs):

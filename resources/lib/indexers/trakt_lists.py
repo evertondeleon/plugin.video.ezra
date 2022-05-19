@@ -13,7 +13,7 @@ from modules.settings import paginate, page_limit
 ls = kodi_utils.local_string
 make_listitem = kodi_utils.make_listitem
 build_url = kodi_utils.build_url
-trakt_icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/trakt.png')
+trakt_icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/trakt.png')
 fanart = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 add2menu_str, add2folder_str, likelist_str, unlikelist_str = ls(32730), ls(32731), ls(32776), ls(32783)
 newlist_str, deletelist_str, nextpage_str, jump2_str = ls(32780), ls(32781), ls(32799), ls(32964)

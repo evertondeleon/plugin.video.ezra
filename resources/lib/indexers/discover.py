@@ -9,8 +9,8 @@ ls = kodi_utils.local_string
 build_url = kodi_utils.build_url
 make_listitem = kodi_utils.make_listitem
 urlencode = kodi_utils.urlencode
-icon_directory = 'special://home/addons/script.ezart/resources/media/%s'
-default_icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/discover.png')
+icon_directory = 'special://home/addons/plugin.video.ezra/resources/media/%s'
+default_icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/discover.png')
 fanart = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 listitem_position = {'similar': 0, 'recommended': 0, 'year_start': 3, 'year_end': 4, 'include_genres': 5, 'exclude_genres': 6, 'include_keywords': 7, 'exclude_keywords': 8,
 'language': 9, 'region': 10, 'network': 10, 'companies': 11, 'rating': 11, 'certification': 12, 'rating_votes': 12, 'rating_movie': 13, 'sort_by': 13,
@@ -108,7 +108,7 @@ class Discover:
 			if year: rootname = '%s (%s)' % (title, year)
 			else: rootname = title
 			if item.get('poster_path'): icon = 'https://image.tmdb.org/t/p/w780%s' % item['poster_path']
-			else: icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/box_office.png')
+			else: icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/box_office.png')
 			append({'line1': rootname, 'line2': item['overview'], 'icon': icon, 'rootname': rootname, 'tmdb_id': str(item['id'])})
 		heading = self.heading_base % ('%s %s' % (ls(32193), ls(32228)))
 		kwargs = {'items': json.dumps(choice_list), 'heading': heading, 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'true'}
@@ -297,7 +297,7 @@ class Discover:
 				known_for_list = [i for i in known_for_list if not i == 'NA']
 				known_for = ', '.join(known_for_list) if known_for_list else ''
 				if item.get('profile_path'): icon = 'https://image.tmdb.org/t/p/h632/%s' % item['profile_path']
-				else: icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/genre_family.png')
+				else: icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/genre_family.png')
 				append({'line1': name, 'line2': known_for, 'icon': icon, 'name': name, 'id': item['id']})
 			heading = self.heading_base % ls(32664)
 			kwargs = {'items': json.dumps(actor_list), 'heading': heading, 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'true'}

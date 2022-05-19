@@ -8,7 +8,7 @@ from indexers.images import Images
 from modules.kodi_utils import translate_path, select_dialog, dialog
 # from modules.kodi_utils import logger
 
-icon_directory = 'special://home/addons/script.ezart/resources/media/%s'
+icon_directory = 'special://home/addons/plugin.video.ezra/resources/media/%s'
 tmdb_image_url = 'https://image.tmdb.org/t/p/h632/%s'
 
 def popular_people():

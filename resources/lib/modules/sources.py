@@ -486,7 +486,7 @@ class Sources():
 		t_files.sort(key=lambda k: k['name'].lower())
 		hide_busy_dialog()
 		if download: return t_files
-		default_furk_icon = translate_path('special://home/addons/script.ezart/resources/media/furk.png')
+		default_furk_icon = translate_path('special://home/addons/plugin.video.ezra/resources/media/furk.png')
 		list_items = [{'line1': '%.2f GB | %s' % (float(item['size'])/1073741824, clean_file_name(item['name']).upper()), 'icon': default_furk_icon} for item in t_files]
 		kwargs = {'items': json.dumps(list_items), 'heading': name, 'highlight': highlight, 'enumerate': 'true', 'multi_choice': 'false', 'multi_line': 'false'}
 		chosen_result = select_dialog(t_files, **kwargs)
@@ -512,7 +512,7 @@ class Sources():
 		if not debrid_files: return notification(32574)
 		debrid_files.sort(key=lambda k: k['filename'].lower())
 		if download: return debrid_files, debrid_function
-		default_debrid_icon = translate_path('special://home/addons/script.ezart/resources/media/%s' % icon)
+		default_debrid_icon = translate_path('special://home/addons/plugin.video.ezra/resources/media/%s' % icon)
 		list_items = [{'line1': '%.2f GB | %s' % (float(item['size'])/1073741824, clean_file_name(item['filename']).upper()), 'icon': default_debrid_icon} \
 							for item in debrid_files]
 		kwargs = {'items': json.dumps(list_items), 'heading': name, 'highlight': highlight, 'enumerate': 'true', 'multi_choice': 'false', 'multi_line': 'false'}

@@ -87,7 +87,7 @@ def random_choice(tmdb_id, poster):
 
 def trakt_manager_choice(params):
 	if not get_setting('trakt_user', ''): return notification(32760, 3500)
-	icon = params.get('icon', None) or translate_path('special://home/addons/script.ezart/resources/media/trakt.png')
+	icon = params.get('icon', None) or translate_path('special://home/addons/plugin.video.ezra/resources/media/trakt.png')
 	choices = [('%s %s...' % (ls(32602), ls(32199)), 'Add'), ('%s %s...' % (ls(32603), ls(32199)), 'Remove')]
 	list_items = [{'line1': item[0], 'icon': icon} for item in choices]
 	kwargs = {'items': json.dumps(list_items), 'heading': ls(32198).replace('[B]', '').replace('[/B]', '')}
@@ -130,7 +130,7 @@ def set_quality_choice(quality_setting):
 	set_setting(quality_setting, ', '.join(choice))
 
 def extras_lists_choice():
-	screenshots_directory = 'special://home/addons/script.ezart/resources/screenshots/extras/%s'
+	screenshots_directory = 'special://home/addons/plugin.video.ezra/resources/screenshots/extras/%s'
 	fl = [2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060, 2061, 2062]
 	dl = [
 			{'name': ls(32664),                            'image': translate_path(screenshots_directory % '001_cast.jpg')},
@@ -281,7 +281,7 @@ def results_highlights_choice():
 	if choice: return set_setting('highlight.type', choice)
 
 def results_layout_choice():
-	screenshots_directory = 'special://home/addons/script.ezart/resources/screenshots/results/%s'
+	screenshots_directory = 'special://home/addons/plugin.video.ezra/resources/screenshots/results/%s'
 	xml_choices = [
 					('List Default',                 translate_path(screenshots_directory % 'source_results_list.default.jpg')),
 					('List Contrast Default',        translate_path(screenshots_directory % 'source_results_list.contrast.default.jpg')),

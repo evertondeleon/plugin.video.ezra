@@ -10,7 +10,7 @@ tp = kodi_utils.translate_path
 ls = kodi_utils.local_string
 main_list_name_dict = {'RootList': ls(32457), 'MovieList': ls(32028), 'TVShowList': ls(32029)}
 pos_str, top_pos_str, top_str = ls(32707), ls(32708), ls(32709)
-icon_directory = 'special://home/addons/script.ezart/resources/media/%s'
+icon_directory = 'special://home/addons/plugin.video.ezra/resources/media/%s'
 
 class MenuEditor:
 	def __init__(self, params):

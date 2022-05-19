@@ -1,7 +1,9 @@
 [B]Please utilize Tips (Tools->Tips for Use) to catch up on any changes and fixes
 
-[COLOR dodgerblue][B]0.0.7 - Dependancy/Requirement version fix[/B][/COLOR]
+[COLOR dodgerblue][B]0.0.9 - EzArt module merged into Ezra / Slight change to torrent cloud defaults[/B][/COLOR]
 
+0.0.8 - Scrape cloud as default.
+0.0.7 - Dependancy/Requirement version fix
 0.0.6 - Cleaning up remaining Fen strings and code. Changelogs back
 0.0.5 - Cleanup of all "Fenom" related strings and code. Autoplay fixed.
 0.0.4 - Ezra repository added

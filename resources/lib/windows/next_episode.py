@@ -8,7 +8,7 @@ from modules.settings import get_art_provider
 click_actions = {10: 'close', 11: 'play', 12: 'cancel'}
 confirm_actions = {10: True, 11: False}
 
-backup_poster = translate_path('special://home/addons/script.ezart/resources/media/box_office.png')
+backup_poster = translate_path('special://home/addons/plugin.video.ezra/resources/media/box_office.png')
 
 class NextEpisode(BaseDialog):
 	def __init__(self, *args, **kwargs):

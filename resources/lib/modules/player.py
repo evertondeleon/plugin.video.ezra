@@ -14,7 +14,7 @@ from modules.utils import sec2time, clean_file_name
 # from modules.kodi_utils import logger
 
 ls = kodi_utils.local_string
-poster_empty = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/box_office.png')
+poster_empty = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/box_office.png')
 fanart_empty = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 
 class EzraPlayer(kodi_utils.xbmc_player):

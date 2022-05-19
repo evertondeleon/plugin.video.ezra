@@ -7,7 +7,7 @@ from modules.utils import clean_file_name
 
 ls = kodi_utils.local_string
 build_url = kodi_utils.build_url
-default_easynews_icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/easynews.png')
+default_easynews_icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/easynews.png')
 fanart = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 
 EasyNews = import_easynews()

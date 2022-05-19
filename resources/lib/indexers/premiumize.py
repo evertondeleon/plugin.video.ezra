@@ -11,7 +11,7 @@ from modules.utils import clean_file_name, normalize
 ls = kodi_utils.local_string
 make_listitem = kodi_utils.make_listitem
 build_url = kodi_utils.build_url
-default_pm_icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/premiumize.png')
+default_pm_icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/premiumize.png')
 fanart = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 folder_str, file_str, down_str, archive_str, rename_str, delete_str = ls(32742).upper(), ls(32743).upper(), ls(32747), ls(32982), ls(32748), ls(32785)
 extensions = supported_video_extensions()

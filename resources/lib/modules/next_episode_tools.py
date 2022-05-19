@@ -21,7 +21,7 @@ dict_removals = kodi_utils.tvshow_dict_removals
 make_listitem = kodi_utils.make_listitem
 included_str, excluded_str = ls(32804).upper(), ls(32805).upper()
 extras_str, browse_str, heading = ls(32645), ls(32652), ls(32806)
-poster_empty = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/box_office.png')
+poster_empty = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/box_office.png')
 fanart_empty = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 string = str
 

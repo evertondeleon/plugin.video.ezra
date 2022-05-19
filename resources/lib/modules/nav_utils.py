@@ -9,7 +9,7 @@ def build_navigate_to_page(params):
 	import json
 	from modules.settings import nav_jump_use_alphabet
 	use_alphabet = nav_jump_use_alphabet()
-	icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/item_jump.png')
+	icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/item_jump.png')
 	fanart = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 	media_type = params.get('media_type')
 	def _builder(use_alphabet):

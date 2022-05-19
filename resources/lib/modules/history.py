@@ -7,7 +7,7 @@ from modules import kodi_utils
 # from modules.kodi_utils import logger
 
 ls = kodi_utils.local_string
-icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/search.png')
+icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/search.png')
 four_insert_string, five_insert_string = '%s %s %s %s', '%s %s %s %s %s'
 delete_str, search_str, hist_str, vid_str, mov_str, key_str = ls(32785), ls(32450), ls(32486), ls(32491), ls(32028), ls(32092)
 tv_str, furk_str, easy_str, peop_str, imdb_str, tmdb_str, coll_str = ls(32029), ls(32069), ls(32070), ls(32507), ls(32064), ls(32068), ls(32499)

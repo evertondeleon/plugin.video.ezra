@@ -20,7 +20,7 @@ date_difference_function, make_day_function, title_key_function, get_datetime_fu
 get_resumetime, get_watched_status, get_watched_info, get_bookmarks = ws.get_resumetime, ws.get_watched_status_episode, ws.get_watched_info_tv, ws.get_bookmarks
 string, watched_str, unwatched_str, extras_str, options_str = str, ls(32642), ls(32643), ls(32645), ls(32646)
 upper, clearprog_str, browse_str, browse_seas_str, nextep_manager_str = string.upper, ls(32651), ls(32652), ls(32544), ls(32599)
-poster_empty, fanart_empty = tp('special://home/addons/script.ezart/resources/media/box_office.png'), tp('special://home/addons/plugin.video.ezra/fanart.png')
+poster_empty, fanart_empty = tp('special://home/addons/plugin.video.ezra/resources/media/box_office.png'), tp('special://home/addons/plugin.video.ezra/fanart.png')
 run_plugin, container_update, unaired_label = 'RunPlugin(%s)', 'Container.Update(%s)', '[COLOR red][I]%s[/I][/COLOR]'
 
 def build_episode_list(params):

@@ -10,7 +10,7 @@ from modules.utils import clean_file_name, normalize
 ls = kodi_utils.local_string
 build_url = kodi_utils.build_url
 make_listitem = kodi_utils.make_listitem
-default_ad_icon = kodi_utils.translate_path('special://home/addons/script.ezart/resources/media/alldebrid.png')
+default_ad_icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/alldebrid.png')
 fanart = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/fanart.png')
 folder_str, file_str, archive_str, down_str = ls(32742).upper(), ls(32743).upper(), ls(32982), ls(32747)
 extensions = supported_video_extensions()

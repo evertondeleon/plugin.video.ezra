@@ -177,10 +177,10 @@
         <setting id="rd.username" label="32056" type="text" default="" enable="false" visible="eq(-1,true)+!eq(-2,)" />
         <setting id="rd.torrent.enabled" type="bool" label="33015" default="true" visible="eq(-2,true)+!eq(-3,)" />
         <setting id="rd.hoster.enabled" type="bool" label="33016" default="true" visible="eq(-3,true)+!eq(-4,)" />
-        <setting id="store_torrent.real-debrid" label="32060" type="bool" default="false" visible="eq(-4,true)+!eq(-5,)" />
-        <setting id="provider.rd_cloud" type="bool" label="$ADDON[plugin.video.ezra 32450] $ADDON[plugin.video.ezra 32098]" default="false" visible="eq(-5,true)+!eq(-6,)" />
+        <setting id="store_torrent.real-debrid" label="32060" type="bool" default="true" visible="eq(-4,true)+!eq(-5,)" />
+        <setting id="provider.rd_cloud" type="bool" label="$ADDON[plugin.video.ezra 32450] $ADDON[plugin.video.ezra 32098]" default="true" visible="eq(-5,true)+!eq(-6,)" />
         <setting id="rd_cloud.title_filter" type="bool" label="32172" default="false" subsetting="true" visible="eq(-1,true)+eq(-6,true)+!eq(-7,)" />
-        <setting id="check.rd_cloud" type="bool" label="32104" default="false" subsetting="true" visible="eq(-2,true)+eq(-7,true)+!eq(-8,)" />
+        <setting id="check.rd_cloud" type="bool" label="32104" default="true" subsetting="true" visible="eq(-2,true)+eq(-7,true)+!eq(-8,)" />
         <setting id="results.sort_rdcloud_first" type="bool" label="32103" default="true" subsetting="true" visible="eq(-3,true)+eq(-8,true)+!eq(-9,)" />
         <setting id="rd.priority" label="32011" type="slider" range="1,1,10" option="int" default="10" visible="eq(-9,true)+!eq(-10,)" />
         <setting id="amble.rd.myaccounts" label="33029" type="action" option="close" action="RunPlugin(plugin://plugin.video.ezra/?mode=myaccounts.open&amp;query=1.21)" />
@@ -191,10 +191,10 @@
         <setting id="pm.account_id" label="32062" type="text" default="" enable="false" visible="eq(-1,true)+!eq(-2,)" />
         <setting id="pm.torrent.enabled" type="bool" label="33015" default="true" visible="eq(-2,true)+!eq(-3,)" />
         <setting id="pm.hoster.enabled" type="bool" label="33016" default="true" visible="eq(-3,true)+!eq(-4,)" />
-        <setting id="store_torrent.premiumize.me" label="32060" type="bool" default="false" visible="eq(-4,true)+!eq(-5,)" />
-        <setting id="provider.pm_cloud" type="bool" label="$ADDON[plugin.video.ezra 32450] $ADDON[plugin.video.ezra 32097]" default="false" visible="eq(-5,true)+!eq(-6,)" />
+        <setting id="store_torrent.premiumize.me" label="32060" type="bool" default="true" visible="eq(-4,true)+!eq(-5,)" />
+        <setting id="provider.pm_cloud" type="bool" label="$ADDON[plugin.video.ezra 32450] $ADDON[plugin.video.ezra 32097]" default="true" visible="eq(-5,true)+!eq(-6,)" />
         <setting id="pm_cloud.title_filter" type="bool" label="32172" default="false" subsetting="true" visible="eq(-1,true)+eq(-6,true)+!eq(-7,)" />
-        <setting id="check.pm_cloud" type="bool" label="32104" default="false" subsetting="true" visible="eq(-2,true)+eq(-7,true)+!eq(-8,)" />
+        <setting id="check.pm_cloud" type="bool" label="32104" default="true" subsetting="true" visible="eq(-2,true)+eq(-7,true)+!eq(-8,)" />
         <setting id="results.sort_pmcloud_first" type="bool" label="32103" default="true" subsetting="true" visible="eq(-3,true)+eq(-8,true)+!eq(-9,)" />
         <setting id="pm.priority" label="32011" type="slider" range="1,1,10" option="int" default="8" visible="eq(-9,true)+!eq(-10,)" />
         <setting id="amble.pm.myaccounts" label="33029" type="action" option="close" action="RunPlugin(plugin://plugin.video.ezra/?mode=myaccounts.open&amp;query=1.13)" />
@@ -205,10 +205,10 @@
         <setting id="ad.account_id" label="32056" type="text" default="" enable="false" visible="eq(-1,true)+!eq(-2,)" />
         <setting id="ad.torrent.enabled" type="bool" label="33015" default="true" visible="eq(-2,true)+!eq(-3,)" />
         <setting id="ad.hoster.enabled" type="bool" label="33016" default="true" visible="eq(-3,true)+!eq(-4,)" />
-        <setting id="store_torrent.alldebrid" label="32060" type="bool" default="false" visible="eq(-4,true)+!eq(-5,)" />
-        <setting id="provider.ad_cloud" type="bool" label="$ADDON[plugin.video.ezra 32450] $ADDON[plugin.video.ezra 32099]" default="false" visible="eq(-5,true)+!eq(-6,)" />
+        <setting id="store_torrent.alldebrid" label="32060" type="bool" default="true" visible="eq(-4,true)+!eq(-5,)" />
+        <setting id="provider.ad_cloud" type="bool" label="$ADDON[plugin.video.ezra 32450] $ADDON[plugin.video.ezra 32099]" default="true" visible="eq(-5,true)+!eq(-6,)" />
         <setting id="ad_cloud.title_filter" type="bool" label="32172" default="false" subsetting="true" visible="eq(-1,true)+eq(-6,true)+!eq(-7,)" />
-        <setting id="check.ad_cloud" type="bool" label="32104" default="false" subsetting="true" visible="eq(-2,true)+eq(-7,true)+!eq(-8,)" />
+        <setting id="check.ad_cloud" type="bool" label="32104" default="true" subsetting="true" visible="eq(-2,true)+eq(-7,true)+!eq(-8,)" />
         <setting id="results.sort_adcloud_first" type="bool" label="32103" default="true" subsetting="true" visible="eq(-3,true)+eq(-8,true)+!eq(-9,)" />
         <setting id="ad.priority" label="32011" type="slider" range="1,1,10" option="int" default="9" visible="eq(-9,true)+!eq(-10,)" />
         <setting id="amble.ad.myaccounts" label="33029" type="action" option="close" action="RunPlugin(plugin://plugin.video.ezra/?mode=myaccounts.open&amp;query=1.5)" />

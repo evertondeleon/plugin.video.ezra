@@ -11,7 +11,7 @@ add_item, set_content, end_directory, set_view_mode, add_items, set_sort_method 
 download_directory, furk_active, easynews_active, source_folders_directory = s.download_directory, s.furk_active, s.easynews_active, s.source_folders_directory
 get_shortcut_folders, currently_used_list, get_shortcut_folder_contents, wi = nc.get_shortcut_folders, nc.currently_used_list, nc.get_shortcut_folder_contents, s.watched_indicators
 _in_str, mov_str, tv_str, edit_str, browse_str, add_menu_str, s_folder_str = ls(32484), ls(32028), ls(32029), ls(32705), ls(32706), ls(32730), ls(32731)
-icon_directory, fanart = 'special://home/addons/script.ezart/resources/media/%s', tp('special://home/addons/plugin.video.ezra/fanart.png')
+icon_directory, fanart = 'special://home/addons/plugin.video.ezra/resources/media/%s', tp('special://home/addons/plugin.video.ezra/fanart.png')
 non_folder_items = ('get_search_term', 'build_popular_people')
 
 class Navigator:
@@ -348,7 +348,7 @@ class Navigator:
 		menu_type, genre_list = self.params['menu_type'], self.params['genre_list']
 		function_list = []
 		function_list_append = function_list.append
-		icon_directory = 'special://home/addons/script.ezart/resources/media/'
+		icon_directory = 'special://home/addons/plugin.video.ezra/resources/media/'
 		genre_list = json.loads(genre_list)
 		list_items = list(_builder())
 		kwargs = {'items': json.dumps(list_items), 'heading': ls(32847), 'enumerate': 'false', 'multi_choice': 'true', 'multi_line': 'false'}

@@ -24,8 +24,8 @@ tmdb_special_key_dict = {'tmdb_movies_languages': 'language', 'tmdb_movies_netwo
 personal_dict = {'in_progress_movies': ('modules.watched_status', 'get_in_progress_movies'), 'favourites_movies': ('modules.favourites', 'retrieve_favourites'),
 				'watched_movies': ('modules.watched_status', 'get_watched_items')}
 run_plugin, container_refresh, container_update = 'RunPlugin(%s)', 'Container.Refresh(%s)', 'Container.Update(%s)'
-item_jump, item_next = tp('special://home/addons/script.ezart/resources/media/item_jump.png'), tp('special://home/addons/script.ezart/resources/media/item_next.png')
-poster_empty, fanart_empty = tp('special://home/addons/script.ezart/resources/media/box_office.png'), tp('special://home/addons/plugin.video.ezra/fanart.png')
+item_jump, item_next = tp('special://home/addons/plugin.video.ezra/resources/media/item_jump.png'), tp('special://home/addons/plugin.video.ezra/resources/media/item_next.png')
+poster_empty, fanart_empty = tp('special://home/addons/plugin.video.ezra/resources/media/box_office.png'), tp('special://home/addons/plugin.video.ezra/fanart.png')
 watched_str, unwatched_str, traktmanager_str = ls(32642), ls(32643), ls(32198)
 favmanager_str, extras_str, options_str, recomm_str = ls(32197), ls(32645), ls(32646), '[B]%s...[/B]' % ls(32503)
 hide_str, exit_str, clearprog_str, play_str = ls(32648), ls(32649), ls(32651), '[B]%s...[/B]' % ls(32174)
