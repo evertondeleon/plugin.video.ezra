@@ -1,0 +1,15 @@
+Wishlist/Roadmap
+
+-----------
+
+Premiumuze Cloud - Search Folder Names 
+
+Currently the cloud search only checks file names not folder names. When downloading torrents that’s normally no issue because the folder name is same to the file name. But in the usenet world, nearly all file names are obfuscated to evade DMCD. But folder names are intact. Any chance you could change the code, that first it’s does what it does now, and check file names, but if it hasn’t found anything then checks folder names?
+
+Talking about the premiumize cloud. It has also usenet feature
+
+-----------
+
+Trakt API Keys
+
+Add Trakt API/Secret options into My Accounts so that main addon can pull a personal trakt API Key if someone wishes to use it.

@@ -177,7 +177,7 @@
         <setting id="rd.username" label="32056" type="text" default="" enable="false" visible="eq(-1,true)+!eq(-2,)" />
         <setting id="rd.torrent.enabled" type="bool" label="33015" default="true" visible="eq(-2,true)+!eq(-3,)" />
         <setting id="rd.hoster.enabled" type="bool" label="33016" default="true" visible="eq(-3,true)+!eq(-4,)" />
-        <setting id="store_torrent.real-debrid" label="32060" type="bool" default="true" visible="eq(-4,true)+!eq(-5,)" />
+        <setting id="store_torrent.real-debrid" label="32060" type="bool" default="false" visible="eq(-4,true)+!eq(-5,)" />
         <setting id="provider.rd_cloud" type="bool" label="$ADDON[plugin.video.ezra 32450] $ADDON[plugin.video.ezra 32098]" default="true" visible="eq(-5,true)+!eq(-6,)" />
         <setting id="rd_cloud.title_filter" type="bool" label="32172" default="false" subsetting="true" visible="eq(-1,true)+eq(-6,true)+!eq(-7,)" />
         <setting id="check.rd_cloud" type="bool" label="32104" default="true" subsetting="true" visible="eq(-2,true)+eq(-7,true)+!eq(-8,)" />
@@ -191,7 +191,7 @@
         <setting id="pm.account_id" label="32062" type="text" default="" enable="false" visible="eq(-1,true)+!eq(-2,)" />
         <setting id="pm.torrent.enabled" type="bool" label="33015" default="true" visible="eq(-2,true)+!eq(-3,)" />
         <setting id="pm.hoster.enabled" type="bool" label="33016" default="true" visible="eq(-3,true)+!eq(-4,)" />
-        <setting id="store_torrent.premiumize.me" label="32060" type="bool" default="true" visible="eq(-4,true)+!eq(-5,)" />
+        <setting id="store_torrent.premiumize.me" label="32060" type="bool" default="false" visible="eq(-4,true)+!eq(-5,)" />
         <setting id="provider.pm_cloud" type="bool" label="$ADDON[plugin.video.ezra 32450] $ADDON[plugin.video.ezra 32097]" default="true" visible="eq(-5,true)+!eq(-6,)" />
         <setting id="pm_cloud.title_filter" type="bool" label="32172" default="false" subsetting="true" visible="eq(-1,true)+eq(-6,true)+!eq(-7,)" />
         <setting id="check.pm_cloud" type="bool" label="32104" default="true" subsetting="true" visible="eq(-2,true)+eq(-7,true)+!eq(-8,)" />
@@ -205,7 +205,7 @@
         <setting id="ad.account_id" label="32056" type="text" default="" enable="false" visible="eq(-1,true)+!eq(-2,)" />
         <setting id="ad.torrent.enabled" type="bool" label="33015" default="true" visible="eq(-2,true)+!eq(-3,)" />
         <setting id="ad.hoster.enabled" type="bool" label="33016" default="true" visible="eq(-3,true)+!eq(-4,)" />
-        <setting id="store_torrent.alldebrid" label="32060" type="bool" default="true" visible="eq(-4,true)+!eq(-5,)" />
+        <setting id="store_torrent.alldebrid" label="32060" type="bool" default="false" visible="eq(-4,true)+!eq(-5,)" />
         <setting id="provider.ad_cloud" type="bool" label="$ADDON[plugin.video.ezra 32450] $ADDON[plugin.video.ezra 32099]" default="true" visible="eq(-5,true)+!eq(-6,)" />
         <setting id="ad_cloud.title_filter" type="bool" label="32172" default="false" subsetting="true" visible="eq(-1,true)+eq(-6,true)+!eq(-7,)" />
         <setting id="check.ad_cloud" type="bool" label="32104" default="true" subsetting="true" visible="eq(-2,true)+eq(-7,true)+!eq(-8,)" />
@@ -278,7 +278,7 @@
         <setting id="autoplay_next_episode" type="bool" label="32178" default="false" visible="eq(-2,true)" />
         <setting id="autoplay_next_show_window" type="bool" label="32002" default="true" subsetting="true" visible="eq(-3,true)+eq(-1,true)" />
         <setting id="autoplay_next_window_timer_method" label="32038" type="enum" default="0" lvalues="32041|32040" subsetting="true" visible="eq(-4,true)+eq(-2,true)+eq(-1,true)" />
-        <setting id="autoplay_next_window_time" label="32004" type="slider" default="20" range="10,1,120" option="int" subsetting="true" visible="eq(-5,true)+eq(-3,true)+eq(-2,true)+eq(-1,0)" />
+        <setting id="autoplay_next_window_time" label="32004" type="slider" default="60" range="10,1,120" option="int" subsetting="true" visible="eq(-5,true)+eq(-3,true)+eq(-2,true)+eq(-1,0)" />
         <setting id="autoplay_next_window_percentage" label="32005" type="slider" default="95" range="75,1,99" option="int" subsetting="true" visible="eq(-6,true)+eq(-4,true)+eq(-3,true)+eq(-2,1)" />
         <setting id="autoplay_next_check_threshold" label="32179" type="slider" default="3" range="0,1,10" option="int" subsetting="true" visible="eq(-7,true)+eq(-5,true)" />
         <setting id="results_quality_episode" type="action" label="32176" default="SD, 720p, 1080p, 4K" action="RunPlugin(plugin://plugin.video.ezra/?mode=set_quality_choice&amp;quality_setting=results_quality_episode)" visible="eq(-8,false)" />
@@ -287,11 +287,6 @@
         <setting label="33063" type="lsep" />
         <setting id="volumecheck.enabled" type="bool" label="33064" default="false" />
         <setting id="volumecheck.percent" label="33065" type="number" default="50" subsetting="true" visible="eq(-1,true)" />
-        <!-- Subtitles -->
-        <setting label="32182" type="lsep" />
-        <setting id="subtitles.subs_action" type="enum" label="32183" default="2" lvalues="32192|32193|32027" />
-        <setting id="subtitles.language" type="select" label="32184" values="Afrikaans|Albanian|Arabic|Armenian|Basque|Bengali|Bosnian|Breton|Bulgarian|Burmese|Catalan|Chinese|Croatian|Czech|Danish|Dutch|English|Esperanto|Estonian|Finnish|French|Galician|Georgian|German|Greek|Hebrew|Hindi|Hungarian|Icelandic|Indonesian|Italian|Japanese|Kazakh|Khmer|Korean|Latvian|Lithuanian|Luxembourgish|Macedonian|Malay|Malayalam|Manipuri|Mongolian|Montenegrin|Norwegian|Occitan|Persian|Polish|Portuguese|Portuguese(Brazil)|Romanian|Russian|Serbian|Sinhalese|Slovak|Slovenian|Spanish|Swahili|Swedish|Syriac|Tagalog|Tamil|Telugu|Thai|Turkish|Ukrainian|Urdu|Vietnamese" default="English" subsetting="true" visible="!eq(-1,2)"  />
-        <setting id="subtitles.auto_enable" type="bool" label="32186" visible="!eq(-2,2)" default="true" subsetting="true" />
     </category>
     <!-- Downloads -->
     <category label="32107">

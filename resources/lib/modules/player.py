@@ -4,7 +4,6 @@ import os
 import json
 from sys import argv
 from threading import Thread
-from apis.opensubtitles_api import OpenSubtitlesAPI
 from apis.trakt_api import make_trakt_slug
 from windows import open_window
 from modules import kodi_utils, settings, watched_status as indicators
@@ -144,7 +143,6 @@ class EzraPlayer(kodi_utils.xbmc_player):
 					if self.remaining_time <= self.start_prep:
 						if not self.nextep_started: self.run_next_ep()
 			except: pass
-			if not self.subs_searched: self.run_subtitles()
 		if not self.media_marked: self.media_watched_marker()
 		indicators.clear_local_bookmarks()
 
@@ -187,14 +185,6 @@ class EzraPlayer(kodi_utils.xbmc_player):
 			Thread(target=play_random_continual, args=(self.tmdb_id,)).start()
 		except: pass
 
-	def run_subtitles(self):
-		self.subs_searched = True
-		try:
-			season = self.season if self.media_type == 'episode' else None
-			episode = self.episode if self.media_type == 'episode' else None
-			Thread(target=Subtitles().get, args=(self.title, self.imdb_id, season, episode)).start()
-		except: pass
-
 	def info_next_ep(self):
 		self.nextep_info_gathered = True
 		try:
@@ -221,107 +211,6 @@ class EzraPlayer(kodi_utils.xbmc_player):
 		try: kodi_utils.close_all_dialog()
 		except: pass
 
-class Subtitles(kodi_utils.xbmc_player):
-	def __init__(self):
-		kodi_utils.xbmc_player.__init__(self)
-		self.os = OpenSubtitlesAPI()
-		self.language_dict = language_choices
-		self.auto_enable = get_setting('subtitles.auto_enable')
-		self.subs_action = get_setting('subtitles.subs_action')
-		self.language1 = self.language_dict[get_setting('subtitles.language')]
-		self.quality = ['bluray', 'hdrip', 'brrip', 'bdrip', 'dvdrip', 'webdl', 'webrip', 'webcap', 'web', 'hdtv', 'hdrip']
-
-	def get(self, query, imdb_id, season, episode):
-		def _notification(line, _time=3500):
-			return kodi_utils.notification(line, _time)
-		def _video_file_subs():
-			try: available_sub_language = self.getSubtitles()
-			except: available_sub_language = ''
-			if available_sub_language == self.language1:
-				if self.auto_enable == 'true': self.showSubtitles(True)
-				_notification(32852)
-				return True
-			return False
-		def _downloaded_subs():
-			files = kodi_utils.list_dirs(subtitle_path)[1]
-			if len(files) > 0:
-				match_lang1 = None
-				match_lang2 = None
-				files = [i for i in files if i.endswith('.srt')]
-				for item in files:
-					if item == search_filename:
-						match_lang1 = item
-						break
-				final_match = match_lang1 if match_lang1 else match_lang2 if match_lang2 else None
-				if final_match:
-					subtitle = os.path.join(subtitle_path, final_match)
-					_notification(32792)
-					return subtitle
-			return False
-		def _searched_subs():
-			chosen_sub = None
-			search_language = self.language1
-			result = self.os.search(query, imdb_id, search_language, season, episode)
-			if not result or len(result) == 0:
-				_notification(32793)
-				return False
-			try: video_path = self.getPlayingFile()
-			except: video_path = ''
-			if '|' in video_path: video_path = video_path.split('|')[0]
-			video_path = os.path.basename(video_path)
-			if self.subs_action == '1':
-				self.pause()
-				choices = [i for i in result if i['SubLanguageID'] == search_language and i['SubSumCD'] == '1']
-				if len(choices) == 0:
-					_notification(32793)
-					return False
-				string = '%s - %s' % (ls(32246).upper(), video_path)
-				dialog_list = ['[B]%s[/B] | [I]%s[/I]' % (i['SubLanguageID'].upper(), i['MovieReleaseName']) for i in choices]
-				list_items = [{'line1': item} for item in dialog_list]
-				kwargs = {'items': json.dumps(list_items), 'heading': string, 'enumerate': 'true', 'multi_choice': 'false', 'multi_line': 'false'}
-				chosen_sub = kodi_utils.select_dialog(choices, **kwargs)
-				self.pause()
-				if not chosen_sub:
-					_notification(32736, _time=1500)
-					return False
-			else:
-				try: chosen_sub = [i for i in result if i['MovieReleaseName'].lower() in video_path.lower() and i['SubLanguageID'] == search_language and i['SubSumCD'] == '1'][0]
-				except: pass
-				if not chosen_sub:
-					fmt = re.split(r'\.|\(|\)|\[|\]|\s|\-', video_path)
-					fmt = [i.lower() for i in fmt]
-					fmt = [i for i in fmt if i in self.quality]
-					if season and fmt == '': fmt = 'hdtv'
-					result = [i for i in result if i['SubSumCD'] == '1']
-					filter = [i for i in result if i['SubLanguageID'] == search_language \
-												and any(x in i['MovieReleaseName'].lower() for x in fmt) and any(x in i['MovieReleaseName'].lower() for x in self.quality)]
-					filter += [i for i in result if any(x in i['MovieReleaseName'].lower() for x in self.quality)]
-					filter += [i for i in result if i['SubLanguageID'] == search_language]
-					if len(filter) > 0: chosen_sub = filter[0]
-					else: chosen_sub = result[0]
-			try: lang = kodi_utils.convert_language(chosen_sub['SubLanguageID'])
-			except: lang = chosen_sub['SubLanguageID']
-			sub_format = chosen_sub['SubFormat']
-			final_filename = sub_filename + '_%s.%s' % (lang, sub_format)
-			download_url = chosen_sub['ZipDownloadLink']
-			temp_zip = os.path.join(subtitle_path, 'temp.zip')
-			temp_path = os.path.join(subtitle_path, chosen_sub['SubFileName'])
-			final_path = os.path.join(subtitle_path, final_filename)
-			subtitle = self.os.download(download_url, subtitle_path, temp_zip, temp_path, final_path)
-			kodi_utils.sleep(1000)
-			return subtitle
-		if self.subs_action == '2': return
-		kodi_utils.sleep(2500)
-		imdb_id = re.sub(r'[^0-9]', '', imdb_id)
-		subtitle_path = kodi_utils.translate_path('special://temp/')
-		sub_filename = 'EZRASubs_%s_%s_%s' % (imdb_id, season, episode) if season else 'EZRASubs_%s' % imdb_id
-		search_filename = sub_filename + '_%s.srt' % self.language1
-		subtitle = _video_file_subs()
-		if subtitle: return
-		subtitle = _downloaded_subs()
-		if subtitle: return self.setSubtitles(subtitle)
-		subtitle = _searched_subs()
-		if subtitle: return self.setSubtitles(subtitle)
 
 
 

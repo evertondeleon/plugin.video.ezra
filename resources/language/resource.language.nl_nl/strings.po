@@ -678,22 +678,6 @@ msgctxt "#32181"
 msgid "Automatically Resume Playback"
 msgstr "Afspelen Automatisch Hervatten"
 
-msgctxt "#32182"
-msgid "Subtitles (Powered by opensubtitles.org)"
-msgstr "Ondertiteling (Aangedreven door opensubtitles.org)"
-
-msgctxt "#32183"
-msgid "Download Subtitles Action"
-msgstr "Download Ondertiteling Actie"
-
-msgctxt "#32184"
-msgid "Subtitle Language"
-msgstr "Ondertiteling Taal"
-
-msgctxt "#32186"
-msgid "Force Enable Local Subs"
-msgstr "Forceer Lokale Ondertiteling Activeren"
-
 msgctxt "#32188"
 msgid "Include"
 msgstr "Inbegrepen"

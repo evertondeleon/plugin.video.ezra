@@ -307,13 +307,6 @@ def results_layout_choice():
 	choice = open_window(('windows.sources', 'SourceResultsChooser'), 'sources_chooser.xml', xml_choices=xml_choices)
 	if choice: set_setting('results.xml_style', choice)
 
-def set_subtitle_choice():
-	choices = ((ls(32192), '0'), (ls(32193), '1'), (ls(32027), '2'))
-	list_items = [{'line1': item[0]} for item in choices]
-	kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
-	choice = select_dialog([i[1] for i in choices], **kwargs)
-	if choice: return set_setting('subtitles.subs_action', choice)
-
 def scraper_dialog_color_choice(setting):
 	setting ='int_dialog_highlight' if setting == 'internal' else 'ext_dialog_highlight'
 	chosen_color = color_choice()
@@ -434,8 +427,6 @@ def options_menu(params, meta=None):
 	results_sorting_status = get_setting('results.sort_order_display').replace('$ADDON[plugin.video.ezra 32582]', ls(32582))
 	current_results_highlights_action = get_setting('highlight.type')
 	results_highlights_status = ls(32240) if current_results_highlights_action == '0' else ls(32583) if current_results_highlights_action == '1' else ls(32241)
-	current_subs_action = get_setting('subtitles.subs_action')
-	current_subs_action_status = 'Auto' if current_subs_action == '0' else ls(32193) if current_subs_action == '1' else off_str
 	active_internal_scrapers = [i.replace('_', '') for i in settings.active_internal_scrapers()]
 	current_scrapers_status = ', '.join([i for i in active_internal_scrapers]) if len(active_internal_scrapers) > 0 else 'N/A'
 	current_quality_status =  ', '.join(settings.quality_filter(quality_setting))
@@ -488,7 +479,6 @@ def options_menu(params, meta=None):
 	elif choice == 'set_results_filter_ignore': set_setting('ignore_results_filter', results_filter_ignore_toggle)
 	elif choice == 'set_results_highlights': results_highlights_choice()
 	elif choice == 'set_quality': set_quality_choice(quality_filter_setting)
-	elif choice == 'set_subs_action': set_subtitle_choice()
 	elif choice == 'extras_lists_choice': extras_lists_choice()
 	elif choice == 'clear_media_cache': return refresh_cached_data(meta)
 	elif choice == 'toggle_torrents_display_uncached': set_setting('torrent.display.uncached', uncached_torrents_toggle)

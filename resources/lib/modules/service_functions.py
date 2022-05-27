@@ -42,16 +42,6 @@ class SyncMyAccounts:
 		sync_MyAccounts(silent=True)
 		return logger('EZRA', 'SyncMyAccounts Service Finished')
 
-class ClearSubs:
-	def run(self):
-		logger('EZRA', 'Clear Subtitles Service Starting')
-		sub_formats = ('.srt', '.ssa', '.smi', '.sub', '.idx')
-		subtitle_path = 'special://temp/%s'
-		files = kodi_utils.list_dirs(translate_path('special://temp/'))[1]
-		for i in files:
-			if i.startswith('EZRASubs_') or i.endswith(sub_formats): kodi_utils.delete_file(translate_path(subtitle_path % i))
-		return logger('EZRA', 'Clear Subtitles Service Finished')
-
 class ReuseLanguageInvokerCheck:
 	def run(self):
 		logger('EZRA', 'ReuseLanguageInvokerCheck Service Starting')

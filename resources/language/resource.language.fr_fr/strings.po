@@ -654,22 +654,6 @@ msgctxt "#32181"
 msgid "Automatically Resume Playback"
 msgstr "Reprendre automatiquement la lecture"
 
-msgctxt "#32182"
-msgid "Subtitles (Powered by opensubtitles.org)"
-msgstr "Sous-titres (Powered by opensubtitles.org)"
-
-msgctxt "#32183"
-msgid "Download Subtitles Action"
-msgstr "Téléchargement des sous-titres"
-
-msgctxt "#32184"
-msgid "Subtitle Language"
-msgstr "Langue des sous-titres"
-
-msgctxt "#32186"
-msgid "Force Enable Local Subs"
-msgstr "Forcer l'activation des sous-titres du fichier"
-
 msgctxt "#32188"
 msgid "Include"
 msgstr "Inclure"

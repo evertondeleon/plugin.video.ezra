@@ -47,7 +47,7 @@ meta_languages = (
 		{'iso': 'nl', 'name': 'Dutch'},       {'iso': 'en', 'name': 'English'},
 		{'iso': 'fi', 'name': 'Finnish'},     {'iso': 'fr', 'name': 'French'},
 		{'iso': 'de', 'name': 'German'},      {'iso': 'el', 'name': 'Greek'},
-		{'iso': 'he', 'name': 'Hebrew'},      {'iso': 'h', 'name': 'Hungarian'},
+		{'iso': 'he', 'name': 'Hebrew'},      {'iso': 'hu', 'name': 'Hungarian'},
 		{'iso': 'it', 'name': 'Italian'},     {'iso': 'ja', 'name': 'Japanese'},
 		{'iso': 'ko', 'name': 'Korean'},      {'iso': 'no', 'name': 'Norwegian'},
 		{'iso': 'pl', 'name': 'Polish'},      {'iso': 'pt', 'name': 'Portuguese'},
