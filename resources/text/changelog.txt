@@ -1,17 +1,8 @@
 [B]Please utilize Tips (Tools->Tips for Use) to catch up on any changes and fixes
 
-[COLOR dodgerblue][B]
-0.1.2
+[COLOR dodgerblue][B]0.1.3 - Minor bugfixes[/B][/COLOR]
 
-TMDB search language fixes
-
-Discover help menu fixed
-
-Integrated subtitle support removed
-
-Ezra was using the Fen user_agent string to connect to opensubtitles. They are not issuing a new string for Ezra as they are moving to the new API. The new API however only allows 5 subtitles per IP per day unless the person is registered (There's ways round it). So it would need the API code completely writing from scratch but then would only support limited downloads. If you are registered it is better to use either the official opensubtitles addon, or the a4ksubtitles addon.  
-[/B][/COLOR]
-
+0.1.2 - Tmdb search language fixes / tool tips - initial setup guide added / discover help menu fixed / integrated subtitles depracated (use a4ksubtitles for systemwide subtitles)
 0.1.1 - Hungarian Language support (thanks dbx) / Hungarian localisation fixed
 0.0.9 - EzArt module merged into Ezra / Slight change to torrent cloud defaults
 0.0.8 - Scrape cloud as default.

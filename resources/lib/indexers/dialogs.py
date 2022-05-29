@@ -450,7 +450,6 @@ def options_menu(params, meta=None):
 			listing += [(base_str1 % ('', ls(32151)), base_str2 % results_sorting_status, 'set_results_sorting')]
 			listing += [(base_str1 % ('', ls(32138)), base_str2 % results_highlights_status, 'set_results_highlights')]
 		listing += [(base_str1 % ('', ls(32686)), base_str2 % results_filter_ignore_status, 'set_results_filter_ignore')]
-		listing += [(base_str1 % ('', ls(32183)), base_str2 % current_subs_action_status, 'set_subs_action')]
 		if 'external' in active_internal_scrapers:
 			listing += [(base_str1 % ('', ls(32160)), base_str2 % uncached_torrents_status, 'toggle_torrents_display_uncached')]
 	else: multi_line = 'false'

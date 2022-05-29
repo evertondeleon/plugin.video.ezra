@@ -77,8 +77,8 @@ def open_settings(query, addon='plugin.video.ezra'):
 			kodi_utils.hide_busy_dialog()
 			menu, function = query.split('.')
 			kodi_utils.execute_builtin('Addon.OpenSettings(%s)' % addon)
-			kodi_utils.execute_builtin('SetFocus(%i)' % (int(menu) - button))
-			kodi_utils.execute_builtin('SetFocus(%i)' % (int(function) - control))
+#			kodi_utils.execute_builtin('SetFocus(%i)' % (int(menu) - button))
+#			kodi_utils.execute_builtin('SetFocus(%i)' % (int(function) - control))
 		except: kodi_utils.execute_builtin('Addon.OpenSettings(%s)' % addon)
 	else: kodi_utils.execute_builtin('Addon.OpenSettings(%s)' % addon)
 
