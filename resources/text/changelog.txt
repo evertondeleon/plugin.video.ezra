@@ -1,7 +1,8 @@
 [B]Please utilize Tips (Tools->Tips for Use) to catch up on any changes and fixes
 
-[COLOR dodgerblue][B]0.1.3 - Minor bugfixes[/B][/COLOR]
+[COLOR dodgerblue][B]0.1.4[/B][/COLOR]
 
+0.1.3 - Minor bugfixes
 0.1.2 - Tmdb search language fixes / tool tips - initial setup guide added / discover help menu fixed / integrated subtitles depracated (use a4ksubtitles for systemwide subtitles)
 0.1.1 - Hungarian Language support (thanks dbx) / Hungarian localisation fixed
 0.0.9 - EzArt module merged into Ezra / Slight change to torrent cloud defaults
@@ -13,4 +14,18 @@
 0.0.3 - Removed fen from headings and moved headings from inline to .po
 0.0.2 - Removed last traces of Fen/Fenom from language files
 0.0.1 - Forked from Fen - New API keys for TMDB and Trakt / New Artwork
+
+[COLOR dodgerblue][B]Roadmap / Wishlist[/B][/COLOR]
+
+[B]Premiumize Cloud - Search Folder Names [/B]
+
+Currently the cloud search only checks file names not folder names. When downloading torrents that’s normally no issue because the folder name is same to the file name. But in the usenet world, nearly all file names are obfuscated to evade DMCD. But folder names are intact.change code, that first it’s does what it does now, and check file names, but if it hasn’t found anything then checks folder names
+
+[B]Trakt API Keys[/B]
+
+Add Trakt API/Secret options into My Accounts so that main addon can pull a personal trakt API Key if someone wishes to use it.
+
+[B]Real Debrid API Keys[/B]
+
+Implement option to use personal RD API key in My Accounts
 
