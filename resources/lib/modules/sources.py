@@ -41,7 +41,8 @@ class Sources():
 		self.threads, self.providers, self.sources, self.internal_scraper_names = [], [], [], []
 		self.prescrape_scrapers, self.prescrape_threads, self.prescrape_sources = [], [], []
 		self.remove_scrapers = ['external']# needs to be mutable so leave as list.
-		self.exclude_list = ['furk', 'easynews', 'ororo', 'filepursuit', 'library', 'gdrive']# needs to be mutable so leave as list.
+#		self.exclude_list = ['furk', 'easynews', 'ororo', 'filepursuit', 'library', 'gdrive']# needs to be mutable so leave as list.
+		self.exclude_list = ['furk', 'easynews', 'ororo', 'library']# needs to be mutable so leave as list.
 		self.sourcesTotal = self.sources4K = self.sources1080p = self.sources720p = self.sourcesSD = 0
 		self.prescrape, self.disabled_ignored = 'true', 'false'
 		self.language = get_setting('meta_language')

@@ -423,8 +423,8 @@ msgid "Downloads"
 msgstr "Downloads"
 
 msgctxt "#32108"
-msgid "Folders 1-5"
-msgstr "Mappen 1-5"
+msgid "Folder Scrapers"
+msgstr "Mappen Scrapers"
 
 msgctxt "#32109"
 msgid "Choose Folder Scraper"

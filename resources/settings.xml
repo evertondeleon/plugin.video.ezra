@@ -32,15 +32,6 @@
         <setting id="results.sort_order" type="text" default="1" visible="hidden" />
         <setting id="database.maintenance.due" type="text" default="0" visible="hidden" />
         <setting id="reuse_language_invoker" type="text" default="true" visible="hidden" />
-        <setting id="folder1.display_name" type="text" default="Folder 1" visible="false" />
-        <setting id="folder1.movies_directory" type="text" default="None" visible="false" />
-        <setting id="folder1.tv_shows_directory" type="text" default="None" visible="false" />
-        <setting id="folder2.display_name" type="text" default="Folder 2" visible="false" />
-        <setting id="folder2.movies_directory" type="text" default="None" visible="false" />
-        <setting id="folder2.tv_shows_directory" type="text" default="None" visible="false" />
-        <setting id="folder3.display_name" default="Folder 3" visible="false" />
-        <setting id="folder3.movies_directory" type="text" default="None" visible="false" />        
-        <setting id="folder3.tv_shows_directory" type="text" default="None" visible="false" />
         <setting id="folder4.display_name" type="text" default="Folder 4" visible="false" />
         <setting id="folder4.movies_directory" type="text" default="None" visible="false" />
         <setting id="folder4.tv_shows_directory" type="text" default="None" visible="false" />
@@ -212,13 +203,25 @@
         <setting id="results.sort_adcloud_first" type="bool" label="32103" default="true" subsetting="true" visible="eq(-3,true)+eq(-8,true)+!eq(-9,)" />
         <setting id="ad.priority" label="32011" type="slider" range="1,1,10" option="int" default="9" visible="eq(-9,true)+!eq(-10,)" />
         <setting id="amble.ad.myaccounts" label="33029" type="action" option="close" action="RunPlugin(plugin://plugin.video.ezra/?mode=myaccounts.open&amp;query=1.5)" />
-        <!-- Folders 1-5 -->
-        <setting label="32108" type="lsep" />
+    </category>
+	<!-- Folder Scrapers-->
+    <category label="32108">
         <setting id="provider.folders" type="bool" label="32055" default="false" />
-        <setting id="folders.manage" type="action" label="32585" default="$ADDON[plugin.video.ezra 32652]" action="RunPlugin(plugin://plugin.video.ezra/?mode=folder_scraper_manager_choice)" visible="eq(-1,true)" />
-        <setting id="folders.title_filter" type="bool" label="32172" default="false" visible="eq(-2,true)" />
-        <setting id="check.folders" type="bool" label="32104" default="false" visible="eq(-3,true)" />
-        <setting id="results.sort_folders_first" type="bool" label="32103" default="true" visible="eq(-4,true)" />
+		<setting id="folders.title_filter" type="bool" label="32172" default="false" visible="eq(-1,true)" />
+        <setting id="check.folders" type="bool" label="32104" default="false" visible="eq(-2,true)" />
+        <setting id="results.sort_folders_first" type="bool" label="32103" default="true" visible="eq(-3,true)" />
+		<setting label="32110" type="lsep" />
+        <setting id="folder1.display_name" type="text" visible="true" label="32115" default="Downloads" />  
+        <setting id="folder1.movies_directory" type="folder" label="32028" visible="true" default="special://profile/addon_data/plugin.video.ezra/Movies Downloads/" />
+        <setting id="folder1.tv_shows_directory" type="folder" label="32029" visible="true" default="special://profile/addon_data/plugin.video.ezra/TV Show Downloads/" />		
+		<setting label="32111" type="lsep" />
+		<setting id="folder2.display_name" type="text" visible="true" label="32115" default="Folder 2" />  
+        <setting id="folder2.movies_directory" type="folder" label="32028" visible="true" default="none" />
+		<setting id="folder2.tv_shows_directory" type="folder" label="32029" visible="true" default="none" />
+		<setting label="32112" type="lsep" />
+		<setting id="folder3.display_name" type="text" visible="true" label="32115" default="Folder 3" />  
+        <setting id="folder3.movies_directory" type="folder" label="32028" visible="true" default="none" />
+		<setting id="folder3.tv_shows_directory" type="folder" label="32029" visible="true" default="none" />
     </category>
     <!-- Results -->
     <category label="32139">

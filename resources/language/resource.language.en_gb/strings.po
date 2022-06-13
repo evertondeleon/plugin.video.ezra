@@ -423,7 +423,7 @@ msgid "Downloads"
 msgstr ""
 
 msgctxt "#32108"
-msgid "Folders 1-5"
+msgid "Folder Scrapers"
 msgstr ""
 
 msgctxt "#32109"

@@ -432,8 +432,8 @@ msgid "Downloads"
 msgstr "Letöltések"
 
 msgctxt "#32108"
-msgid "Folders 1-5"
-msgstr "Mappák 1-5"
+msgid "Folders Scrapers"
+msgstr "Mappák Scrapers"
 
 msgctxt "#32109"
 msgid "Choose Folder Scraper"

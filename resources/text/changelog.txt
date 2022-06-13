@@ -1,7 +1,9 @@
 [B]Please utilize Tips (Tools->Tips for Use) to catch up on any changes and fixes
 
-[COLOR dodgerblue][B]0.1.4[/B][/COLOR]
+[COLOR dodgerblue][B]0.1.5[/B][/COLOR]
+[COLOR dodgerblue][B]--[/B][/COLOR] Folder scrapers implemented in an older format. May or may not be reliable ;)
 
+0.1.4 - Gdrive deprecated / Icon Updates / Folder scrapers disabled pending removal or repair. This is a feature that was broken in previous incarnation of the addon.
 0.1.3 - Minor bugfixes
 0.1.2 - Tmdb search language fixes / tool tips - initial setup guide added / discover help menu fixed / integrated subtitles depracated (use a4ksubtitles for systemwide subtitles)
 0.1.1 - Hungarian Language support (thanks dbx) / Hungarian localisation fixed
