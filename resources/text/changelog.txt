@@ -1,4 +1,4 @@
-[B]Please utilize Tips (Tools->Tips for Use) to catch up on any changes and fixes
+[B]Please utilize Tips (Tools->Tips for use) to catch up on any changes and fixes
 
 [COLOR dodgerblue][B]0.1.5[/B][/COLOR]
 [COLOR dodgerblue][B]--[/B][/COLOR] Folder scrapers implemented in an older format. May or may not be reliable ;)
