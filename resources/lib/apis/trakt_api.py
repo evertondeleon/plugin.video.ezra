@@ -4,6 +4,7 @@ import time
 from threading import Thread
 from metadata import movie_meta_external_id, tvshow_meta_external_id
 from caches import check_databases, trakt_cache
+from myaccounts.modules.trakt import Trakt
 from caches.main_cache import cache_object
 from modules import kodi_utils, settings
 from modules.nav_utils import paginate_list
@@ -12,7 +13,8 @@ from modules.requests_utils import make_session
 from modules.utils import sort_list, sort_for_article, make_thread_list, jsondate_to_datetime as js2date
 
 ls, logger = kodi_utils.local_string, kodi_utils.logger
-CLIENT_ID = 'e3a8d1c673dfecb7f669b23ecbf77c75fcfd24d3e8c3dbc7f79ed995262fa1db'
+myac_trakt= Trakt()
+CLIENT_ID = myac_trakt.client_id
 trakt_icon = kodi_utils.translate_path('special://home/addons/plugin.video.ezra/resources/media/trakt.png')
 trakt_str = ls(32037)
 API_ENDPOINT = 'https://api.trakt.tv/%s'
