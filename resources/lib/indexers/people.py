@@ -5,11 +5,14 @@ from urllib.parse import unquote
 from apis.tmdb_api import tmdb_people_info
 from windows import open_window
 from indexers.images import Images
-from modules.kodi_utils import translate_path, select_dialog, dialog
+from modules.kodi_utils import translate_path, select_dialog, dialog, local_string
+
+
 # from modules.kodi_utils import logger
 
 icon_directory = 'special://home/addons/plugin.video.ezra/resources/media/%s'
 tmdb_image_url = 'https://image.tmdb.org/t/p/h632/%s'
+ls = local_string
 
 def popular_people():
 	Images().run({'mode': 'popular_people_image_results', 'page_no': 1})
