@@ -1,4 +1,4 @@
-[B]Please utilize Tips (Tools->Tips for use) to catch up on any changes and fixes
+[B]Please utilize Tips (Tools->Tips for use) to catch up on any changes and fixes.
 
 [COLOR dodgerblue][B]0.1.7[/B][/COLOR]
 [COLOR dodgerblue][B]--[/B][/COLOR] Fixed People search. 
