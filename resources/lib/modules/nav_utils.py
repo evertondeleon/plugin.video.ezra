@@ -23,7 +23,7 @@ def build_navigate_to_page(params):
 		start_list = [str(i) for i in range(1, int(params.get('total_pages'))+1)]
 		start_list.remove(params.get('current_page'))
 	list_items = list(_builder(use_alphabet))
-	kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+	kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 	new_start = kodi_utils.select_dialog(start_list, **kwargs)
 	kodi_utils.sleep(100)
 	if new_start == None: return

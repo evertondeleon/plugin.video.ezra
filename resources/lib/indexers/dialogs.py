@@ -121,7 +121,7 @@ def set_quality_choice(quality_setting):
 	try: preselect = [fl.index(i) for i in get_setting(quality_setting).split(', ')]
 	except: preselect = []
 	list_items = [{'line1': item} for item in dl]
-	kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'true', 'multi_line': 'false', 'preselect': preselect}
+	kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'true', 'multi_line': 'false', 'preselect': preselect}
 	choice = select_dialog(fl, **kwargs)
 	if choice is None: return
 	if choice == []:
@@ -165,7 +165,7 @@ def set_language_filter_choice(filter_setting):
 	try: preselect = [fl.index(i) for i in get_setting(filter_setting).split(', ')]
 	except: preselect = []
 	list_items = [{'line1': item} for item in dl]
-	kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'true', 'multi_line': 'false', 'preselect': preselect}
+	kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'true', 'multi_line': 'false', 'preselect': preselect}
 	choice = select_dialog(fl, **kwargs)
 	if choice == None: return
 	if choice == []: return set_setting(filter_setting, 'eng')
@@ -177,7 +177,7 @@ def enable_scrapers_choice():
 	scraper_names = [ls(32118).upper(), ls(32069).upper(), ls(32070).upper(), ls(32098).upper(), ls(32097).upper(), ls(32099).upper(), ls(32108).upper()]
 	preselect = [scrapers.index(i) for i in settings.active_internal_scrapers()]
 	list_items = [{'line1': item} for item in scraper_names]
-	kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'true', 'multi_line': 'false', 'preselect': preselect}
+	kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'true', 'multi_line': 'false', 'preselect': preselect}
 	choice = select_dialog(scrapers, **kwargs)
 	if choice is None: return
 	for i in scrapers:
@@ -226,7 +226,7 @@ def folder_scraper_manager_choice(folder_info=None):
 	def _set_folder_path():
 		if _get_property(setting) not in ('', 'None'):
 			list_items = [{'line1': item} for item in [ls(32682), ls(32683)]]
-			kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+			kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 			action = select_dialog([1, 2], **kwargs)
 			if action == None: _return(folder_info)
 			if action == 1:
@@ -256,7 +256,7 @@ def folder_scraper_manager_choice(folder_info=None):
 		else: _update_folder_info()
 		listing = _make_listing()
 		list_items = [{'line1': item[0]} for item in listing]
-		kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+		kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 		setting = select_dialog([i[1] for i in listing], **kwargs)
 		_process_setting()
 	except Exception as e:
@@ -267,7 +267,7 @@ def results_sorting_choice():
 	choices = [('%s, %s, %s' % (quality, provider, size), '0'), ('%s, %s, %s' % (quality, size, provider), '1'), ('%s, %s, %s' % (provider, quality, size), '2'),
 			   ('%s, %s, %s' % (provider, size, quality), '3'), ('%s, %s, %s' % (size, quality, provider), '4'), ('%s, %s, %s' % (size, provider, quality), '5')]
 	list_items = [{'line1': item[0]} for item in choices]
-	kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+	kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 	choice = select_dialog(choices, **kwargs)
 	if choice:
 		set_setting('results.sort_order_display', choice[0])
@@ -276,7 +276,7 @@ def results_sorting_choice():
 def results_highlights_choice():
 	choices = ((ls(32240), '0'), (ls(32583), '1'), (ls(32241), '2'))
 	list_items = [{'line1': item[0]} for item in choices]
-	kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+	kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 	choice = select_dialog([i[1] for i in choices], **kwargs)
 	if choice: return set_setting('highlight.type', choice)
 
@@ -339,7 +339,7 @@ def color_choice(msg_dialog='Ezra', no_color=False):
 		color_chart.insert(0, 'No Color')
 		color_display.insert(0, 'No Color')
 	list_items = [{'line1': item} for item in color_display]
-	kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+	kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 	choice = select_dialog(color_chart, **kwargs)
 	if choice == None: return
 	return choice
@@ -394,7 +394,7 @@ def external_scrapers_choice():
 		(torrent_scrapers_base, disable_string_base % torrent_string, {'mode': 'toggle_all', 'folder': 'torrents', 'setting': 'false'}),
 		(torrent_scrapers_base, enable_disable_string_base % torrent_string, {'mode': 'enable_disable', 'folder': 'torrents'})]
 	list_items = [{'line1': item[0], 'line2': item[1], 'icon': icon} for item in tools_menu]
-	kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'true'}
+	kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'true'}
 	chosen_tool = select_dialog(tools_menu, **kwargs)
 	if chosen_tool == None: return
 	params = chosen_tool[2]
