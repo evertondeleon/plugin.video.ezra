@@ -123,7 +123,7 @@ def enable_disable(folder):
 		all_sources = sorted(enabled + disabled)
 		preselect = [all_sources.index(i) for i in enabled]
 		list_items = [{'line1': i.upper(), 'icon': icon} for i in all_sources]
-		kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'true', 'multi_line': 'false', 'preselect': preselect}
+		kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'true', 'multi_line': 'false', 'preselect': preselect}
 		chosen = kodi_utils.select_dialog(all_sources, **kwargs)
 		if chosen == None: return
 		for i in all_sources:

@@ -37,7 +37,7 @@ class Favourites:
 		favorites = ls(32453)
 		fl = [('%s %s' % (ls(32028), ls(32453)), 'movie'), ('%s %s' % (ls(32029), ls(32453)), 'tvshow')]
 		list_items = [{'line1': item[0]} for item in fl]
-		kwargs = {'items': json.dumps(list_items), 'heading': 'Ezra', 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
+		kwargs = {'items': json.dumps(list_items), 'heading': ls(32036), 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'false'}
 		self.media_type = select_dialog([item[1] for item in fl], **kwargs)
 		if self.media_type == None: return
 		if not confirm_dialog(): return
