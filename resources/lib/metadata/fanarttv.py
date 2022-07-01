@@ -5,8 +5,8 @@ from modules.requests_utils import make_session
 # Code snippets from nixgates. Thankyou.
 base_url = 'https://webservice.fanart.tv/v3/%s/%s'
 api_key = 'a7ad21743fd710fccb738232f2fbdcfc'
-default_fanart_meta = {'poster2': '', 'fanart2': '', 'banner': '', 'clearart': '', 'clearlogo': '', 'landscape': '', 'discart': '', 'fanart_added': True}
-default_fanart_nometa = {'poster2': '', 'fanart2': '', 'banner': '', 'clearart': '', 'clearlogo': '', 'landscape': '', 'discart': '', 'fanart_added': False}
+default_fanart_meta = {'poster2': '', 'fanart2': '', 'banner': '', 'clearart': '', 'clearlogo': '', 'landscape': '', 'discart': '','keyart':'', 'fanart_added': True}
+default_fanart_nometa = {'poster2': '', 'fanart2': '', 'banner': '', 'clearart': '', 'clearlogo': '', 'landscape': '', 'discart': '', 'keyart':'', 'fanart_added': False}
 session = make_session('https://webservice.fanart.tv')
 
 def get(media_type, language, media_id, client_key):
@@ -25,6 +25,7 @@ def get(media_type, language, media_id, client_key):
 						'clearlogo': parse_art(art_get('movielogo', []) + art_get('hdmovielogo', []), language),
 						'landscape': parse_art(art_get('moviethumb'), language),
 						'discart': parse_art(art_get('moviedisc'), language),
+						'keyart': parse_art(art_get('movieposter'), language),
 						'fanart_added': True}
 	else:
 		fanart_data = {'poster2': parse_art(art_get('tvposter'), language),
@@ -34,6 +35,7 @@ def get(media_type, language, media_id, client_key):
 						'clearlogo': parse_art(art_get('hdtvlogo', []) + art_get('clearlogo', []), language),
 						'landscape': parse_art(art_get('tvthumb'), language),
 						'discart': '',
+						'keyart':'',
 						'fanart_added': True}
 	return fanart_data
 
