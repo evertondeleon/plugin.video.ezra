@@ -37,4 +37,6 @@ Note: Since 0.1.6 you can now use your own Trakt API keys. If you have previousl
 
 6. If you are using an Amazon Fire device some users have reported a reboot is beneficial at this point
 
+7. Finally, to ensure the Repository updates automatically head to the Ezra repo and manually update/install the repository from the repo version. 
+
 Ezra is now all set up. Enjoy. 
