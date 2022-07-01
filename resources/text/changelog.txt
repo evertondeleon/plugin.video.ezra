@@ -1,8 +1,9 @@
 [B]Please utilize Tips (Tools->Tips for use) to catch up on any changes and fixes.
 
-[COLOR dodgerblue][B]0.1.7[/B][/COLOR]
-[COLOR dodgerblue][B]--[/B][/COLOR] Fixed People search. 
+[COLOR dodgerblue][B]0.1.8[/B][/COLOR]
+[COLOR dodgerblue][B]--[/B][/COLOR] Fanart metaprovider keyart (Git request #2). 
 
+0.1.7 - Fixed people search
 0.1.6 - Hard coded Trakt API keys removed. Pulls from my accounts 
 0.1.5 - Folder scrapers implemented in an older format. May or may not be reliable ;)
 0.1.4 - Gdrive deprecated / Icon Updates / Folder scrapers disabled pending removal or repair. This is a feature that was broken in previous incarnation of the addon.
